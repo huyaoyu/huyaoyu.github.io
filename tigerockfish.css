@@ -1,0 +1,399 @@
+html {
+	margin: 0px;
+	padding: 0px;
+	height: 100%;
+	width: 100%;
+	}
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 0.9em;
+	height: 100%;
+	width: 100%;
+	background-image: url(water.png);
+	background-repeat: repeat-x;
+	background-position: top;
+	background-color: #F0ECD6;
+	}
+a:link {
+	color: #993300;
+	text-decoration: none;
+	}
+a:visited {
+	color: #999900;
+	text-decoration: none;
+	}
+a:hover, a:active {
+	color: #993300;
+	text-decoration: none;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #993300;
+	}
+
+
+
+.page-wrapper {
+	width: 700px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+	background-image: url(squid-blowfish.png);
+	background-repeat: no-repeat;
+	background-position: right top;
+	z-index: 4;
+	position: relative;
+	}
+.intro {
+	margin-top: 0px;
+	padding-top: 130px;
+	}
+header h1 {
+	background-image: url(titlefish.png);
+	height: 195px;
+	width: 290px;
+	background-repeat: no-repeat;
+	margin-top: 0px;
+	position: absolute;
+
+	text-indent: -999px;
+	white-space: nowrap;
+	overflow: hidden;
+	}
+
+header {
+	z-index: 5;
+	margin-top: -130px;
+	position: absolute;
+}
+
+.name {
+	background-image: url(toptop.png);
+	background-repeat: no-repeat;
+	width: 385px;
+	Height: 50px;
+	padding-top: 20px;
+	padding-bottom: 0px;
+	}
+
+.name h1{
+	margin-top: 0px;
+	margin-left: 70px;
+
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	}
+
+.summary {
+	margin-top: 0px;
+	background-image: url(back.png);
+	width: 385px;
+	margin-bottom: 0px;
+	padding-bottom: 20px;
+	}
+.summary p {
+	margin-top: 0px;
+	font-size: 0.7em;
+	font-style: normal;
+	margin-left: 60px;
+	margin-right: 60px;
+	line-height: 120%;
+	text-align: left;
+	}
+	
+.summary strong {
+	font-size: 1.30em;
+	float:left;
+}
+
+
+.features {
+	margin-top: 0px;
+	width: 385px;
+	margin-bottom: 0px;
+	padding-bottom: 20px;
+	background-image: url(back.png);
+	}
+.features h3{
+	margin-top: 0px;
+	background-image: url(features.png);
+	height: 45px;
+	width: 242px;
+	margin-left: 70px;
+
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	}
+.features p {
+	font-size: 0.8em;
+	margin-left: 60px;
+	margin-right: 60px;
+	line-height: 140%;
+	}	
+.supporting {
+	margin-top: 0px;
+	width: 385px;
+	background-image: url(end.png);
+	background-repeat: no-repeat;
+	background-position: bottom;
+	padding-bottom: 396px;
+	margin-bottom: 50px;
+	}
+.supporting h3 {
+	margin-top: 0px;
+	}
+.supporting p {
+	font-size: 0.8em;
+	margin-left: 60px;
+	margin-right: 60px;
+	line-height: 140%;
+	}	
+.habits {
+	background-image: url(back.png);
+	padding-bottom: 20px;
+}
+.habits h3 {
+	background-image: url(habits.png);
+	background-repeat: no-repeat;
+	height: 45px;
+	width: 242px;
+	margin-left: 70px;
+
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.feeding {
+	background-image: url(back.png);
+	padding-bottom: 20px;
+}
+.feeding h3 {
+	background-image: url(feeding.png);
+	background-repeat: no-repeat;
+	height: 45px;
+	width: 242px;
+	margin-left: 70px;
+
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}	
+.otherkind {
+	background-image: url(back.png);
+	padding-bottom: 20px;
+}	
+.otherkind h3 {
+	background-image: url(otherkind.png);
+	background-repeat: no-repeat;
+	height: 45px;
+	width: 242px;
+	margin-left: 70px;	
+
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	}
+
+.otherkind p a {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.otherkind p a:hover {
+	color: #333333;
+	text-decoration: underline;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+
+.foot {
+	background-image: url(back.png);
+	margin-bottom: 0px;
+	}
+
+.foot h3{
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	background-image: url(loveu.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+	padding-top: 25px;
+	text-align: center;
+	font-style: italic;
+	
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.foot p {
+	margin-bottom: 0px;
+	padding-bottom: 10px;
+	padding-top: 0px;
+	text-align: center;
+	font-style: italic;
+}
+
+.foot p strong {
+	color: #993300;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.foot p a {
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+.foot p a:hover {
+	color: #333333;
+	text-decoration: underline;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+}
+
+.sidebar {
+	background-image: url(menu-top.png);
+	background-repeat: no-repeat;
+	background-position: top;
+	width: 225px;
+	padding-top: 104px;
+	position: absolute;
+	top: 300px;
+	margin-left: 375px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 0.8em;
+	}
+.sidebar ul {
+	margin-left: 35px;
+	padding-left: 10px;
+	list-style-image: url(bullet.png);
+	list-style-position: outside;
+	margin-top: 5px;
+	}
+.sidebar li {
+	margin-bottom: 10px;
+	line-height: 130%;
+	margin-right: 30px;
+	}
+.morefish {
+	background-image: url(menu-back.png);
+	margin-bottom: 0px;
+	padding-bottom: 20px;
+}
+.morefish h3 {
+	background-image: url(morefish.png);
+	background-repeat: no-repeat;
+	height: 15px;
+	width: 200px;
+	margin-top: 0px;
+	margin-left: 0px;
+
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.morefish a {
+	display: block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: bold;
+}
+/*.design-selection a:hover {
+	color: #333333;
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 0px;
+	border-top-style: none;
+	border-right-style: none;
+	border-bottom-style: none;
+	border-left-style: none;
+	text-decoration: underline;
+}*/
+.morefish li {
+	font-style: italic;;
+}
+.morefish a.fishname {
+	display: inline;
+}
+.morefish a.fishdescription {
+	font-style: italic;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: normal;
+}
+/*.design-archives {
+	background-image: url(menu-back.png);
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-bottom: 20px;
+}	
+.design-archives h3 {
+	background-image: url(archives.png);
+	background-repeat: no-repeat;
+	height: 15px;
+	width: 200px;
+	margin-top: 0px;
+	margin-left: 0px;
+
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.zen-resources {
+	background-image: url(menu-back.png);
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-bottom: 20px;
+}
+.zen-resources h3 {
+	background-image: url(resources.png);
+	background-repeat: no-repeat;
+	height: 15px;
+	width: 200px;
+	margin-top: 0px;
+	margin-left: 0px;
+
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}*/
+.sidebar .wrapper {
+	background-image: url(menu-end.png);
+	background-repeat: no-repeat;
+	padding-bottom: 30px;
+	background-position: bottom;
+	}
+
+
+
+/*
+.extra2 {
+	background-image: url(bottom.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 200px;
+	width: 100%;
+	position: fixed;
+	bottom: 0px;
+	z-index: 5;
+}*/
+.extra1 {
+	z-index: 2;
+	height: 800px;
+	width: 100%;
+	position: absolute;
+	top: 770px;
+	background-image: url(critters.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
