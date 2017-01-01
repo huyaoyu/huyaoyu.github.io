@@ -1,0 +1,6 @@
+1. Inner content of regular HTML.
+2. Share elements among CSS files.
+3. Try variables in CSS.
+4. Captions for figures and cross reference in on web page.
+5. Auto numbering.
+6. Latex or editing equations.
