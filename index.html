@@ -13,10 +13,15 @@
 
     <!--For displaying Latex equations.-->
     <script type="text/javascript" src="http://latex.codecogs.com/latexit.js"></script>
+    <script type="text/javascript">
+        var eqn = 0
+    </script>
 
 </head>
 
 <body>
+    <!--The js defined in outer file.-->
+    <script src="JS/equations.js"></script>
 
     <!-- The side bar. -->
     <div class="sidebar">
@@ -55,7 +60,34 @@
         </p>
 
         <h1>Test latex equation</h1>
-        <div lang="latex">E = mc^2</div>
+        <p>This is the first equation.</p>
+        <table class="eq">
+            <tr>
+                <td class="eqs_eq">
+                    <div lang="latex">E = mc^2</div>
+                </td>
+                <td class="eqs_number">
+                    <script type="text/javascript">
+                        eqn++
+                        show_eqs_number(eqn)
+                    </script>
+                </td>
+            </tr>
+        </table>
+        <p>This is the second equation.</p>
+        <table class="eq">
+            <tr>
+                <td class="eqs_eq">
+                    <div lang="latex">Re = \frac{\rho v d}{\mu}</div>
+                </td>
+                <td class="eqs_number">
+                    <script type="text/javascript">
+                        eqn++
+                        show_eqs_number(eqn)
+                    </script>
+                </td>
+            </tr>
+        </table>
     </div>
 </body>
 

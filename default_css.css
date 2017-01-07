@@ -1,82 +1,103 @@
 /*This is the defualt CSS*/
 
+
 /*presudo element for delcaring variables.*/
+
 :root {
-	--background-color-gray: #f1f1f1;
+    --background-color-gray: #f1f1f1;
 }
 
+
 /* basic elements */
+
 html {
-	margin: 0;
-	padding: 0;
-	font-size: 120%;
-	background-color: var(--background-color-gray); /*gray*/
-	}
+    margin: 0;
+    padding: 0;
+    font-size: 120%;
+    background-color: var(--background-color-gray);
+    /*gray*/
+}
 
-body { 
-	font: 100% georgia, sans-serif;
-	line-height: 1.88889;
-	color: #555753; 
-	background: #fff; 
-	margin: 0; 
-	padding: 0;
-	}
+body {
+    font: 100% georgia, sans-serif;
+    line-height: 1.88889;
+    color: #555753;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+}
 
-p { 
-	margin-top: 0; 
-	text-align: justify;
-	}
+p {
+    margin-top: 0;
+    text-align: justify;
+}
 
 div {
-	padding: 0 0 0 0;
-	margin: 0;
-	background-color: var(--background-color-gray); /*gray*/
+    padding: 0 0 0 0;
+    margin: 0;
+    background-color: var(--background-color-gray);
+    /*gray*/
 }
 
 div.plain_div {
-	padding: 0 0 0 0;
-	margin: 0;
+    padding: 0 0 0 0;
+    margin: 0;
 }
 
 div.center_div {
-	padding: 0 175px 0 175px;
-	margin: 0;
-	background-color: var(--background-color-gray); /*gray*/
+    padding: 0 175px 0 175px;
+    margin: 0;
+    background-color: var(--background-color-gray);
+    /*gray*/
 }
 
 div.to_sidebar_left {
-	margin-left: 20%;
-	padding: 1px 16px;
-	background-color: var(--background-color-gray); /*gray*/
+    margin-left: 20%;
+    padding: 1px 16px;
+    background-color: var(--background-color-gray);
+    /*gray*/
 }
 
 div.sidebar ul {
-	/*Remove the bullets.*/
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	background-color: var(--background-color-gray); /*gray*/
-	width: 20%;
-	height: 100%;
-	position: fixed;
-	overflow: auto;
+    /*Remove the bullets.*/
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color-gray);
+    /*gray*/
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    overflow: auto;
 }
 
 div.sidebar li a {
-	/*Displaying the links as block elements makes the whole link area clickable (not just the text), and it allows us to specify the width (and padding, margin, height, etc. )*/
-	display: block;
-	width: 150px;
-	color: #000;
-	padding: 8px 16px;
-	text-decoration: none;
+    /*Displaying the links as block elements makes the whole link area clickable (not just the text), and it allows us to specify the width (and padding, margin, height, etc. )*/
+    display: block;
+    width: 150px;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
 }
 
 div.sidebar li a:hover {
-	background-color: #555;
-	color: white;
+    background-color: #555;
+    color: white;
 }
 
 div.sidebar a.active {
-	background-color: #4CAF50;
-	color: white;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.eq {
+    width: 70%;
+}
+
+.eqs_eq {
+    text-align: center;
+}
+
+.eqs_number {
+    text-align: right;
 }
