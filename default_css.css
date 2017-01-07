@@ -101,3 +101,9 @@ div.sidebar a.active {
 .eqs_number {
     text-align: right;
 }
+
+.center_image {
+    text-align: center;
+    display: block;
+    /*This is found on www.computerhope.com/issues/ch001613.htm*/
+}
