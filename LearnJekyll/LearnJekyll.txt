@@ -1,0 +1,16 @@
+Learn Jekyll
+
+1. The official web site of Jekyll and Markdown
+
+The official web site of Jekyll is 
+
+http://jekyllrb.com/docs/usage/
+
+The official web site of Markdown is 
+
+http://daringfireball.net/projects/markdown/
+
+2. Start the local server
+
+jekyll server
+
