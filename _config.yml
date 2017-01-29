@@ -1,3 +1,19 @@
+# Destination
+destination: ./_site_staging
+
+# Timezone
+timezone: Asia/Shanghai
+
+# Defaults
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "default"
+      author: "Yaoyu Hu"
+
 cnzz_tongji:
   enable: true
   siteid: 1261122228

@@ -14,3 +14,11 @@ http://daringfireball.net/projects/markdown/
 
 jekyll server
 
+3. Standard directory layouts.
+
+4. _config.yml
+
+timezone: Asia/Shanghai
+
+Do not use tabs in configuration files!
+
