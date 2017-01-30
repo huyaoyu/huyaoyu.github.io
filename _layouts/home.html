@@ -1,0 +1,55 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1>Show some variables</h1>
+  <p>site.baseurl = <b>{{ sit.baseurl }}</b></p>
+
+  <h1>Try site data here</h1>
+  <p>The value of site.data.common_data.myself.university is <b>{{ site.data.common_data.myself.university }}</b></p>
+  <p>Other data are as follows: <br>
+    site.data.common_data.myself.department = <b>{{ site.data.common_data.myself.department }}</b><br>
+    site.data.common_data.myself.major = <b>{{ site.data.common_data.myself.major }}</b><br>
+    site.data.common_data.myself.birth_date = <b>{{ site.data.common_data.myself.birth_date }}</b><br>
+    site.data.common_data.myself.mobile_number = <b>{{ site.data.common_data.myself.mobile_number }}</b><br>
+    site.data.common_data.myself.email = <b>{{ site.data.common_data.myself.email }}</b><br>
+    site.data.common_data.myself.address = <b>{{ site.data.common_data.myself.address }}</b><br>
+    site.data.common_data.myself.city = <b>{{ site.data.common_data.myself.city }}</b><br>
+    site.data.common_data.myself.nation = <b>{{ site.data.common_data.myself.nation }}</b><br>
+  </p>
+
+  <h1>Try highlight codes</h1>
+  <p>Highlight a fragment of C++ code:<br></p>
+
+  {% highlight c++ linenos %}
+#include <iostream>
+
+int main(void)
+{
+  std::cout << "Hellow world!" << std::endl;
+
+  return 0;
+}
+  {% endhighlight %}
+
+  <h1 class="page-heading">Posts</h1>
+  
+  {{ content }}
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+
+</div>

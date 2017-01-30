@@ -22,3 +22,67 @@ timezone: Asia/Shanghai
 
 Do not use tabs in configuration files!
 
+5. Use Theme.
+
+To see where the default theme files are, use the following command
+
+bundle show <theme name>
+
+e.g.: bundle show minima
+
+6. To overide the default theme, copy the default theme file into your own sites directory, like _layouts, _includes, etc.
+
+7. Ues variables and data files.
+
+Data files a placed in _data directory. And it could be a .yml file or a .json or a .csv file. 
+
+I tried the .json out. It worked.
+
+The data stored inside the data file is accessed as the follows:
+
+{{ site.data.<data file name>.<variable name>.<element> }}
+
+8. Templete and filter
+
+like:
+
+{{ "/assets/style.css" | relative_url }}
+
+The seem to be Liquid filters.
+
+9. Tags
+9.1.
+{% include <xxx.html> %}
+
+Passing parameters to includes
+
+In the file to be included:
+{{ include.<parameter name> }}
+In the file makes the include action:
+{% inlcude <xxx.html> <parameter name>="<paramter content>" %}
+
+Passing parameter variables to includes using capture tag.
+{% capture download_note %}The latest version of
+{{ site.product_name }} is now available.{% endcapture %}
+
+{% include <xxx.html> <parameter name>=download_note %} note that there are no quots
+
+You can also pass references to YAML files as parameter values to include.
+
+9.2.
+{% highlight c++ linenos %}
+{% endhighlight %}
+
+9.3.
+{{ site.baseurl }}{% link _posts/YYYY-MM-DD-xxxx.md %} can be used in markdown file.
+
+{{ site.baseurl }}{% post_url /subdir/2010-07-21-name-of-post %} can be used in markdown file.
+
+10. Permalink
+
+11. Math Support
+
+http://jekyllrb.com/docs/extras/
+
+
+
