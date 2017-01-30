@@ -42,6 +42,12 @@ timezone: Asia/Shanghai
 collections:
 - my_collection
 
+
+collections:
+  my_collection:
+    output: true
+
+
 # Defaults
 defaults:
   -
