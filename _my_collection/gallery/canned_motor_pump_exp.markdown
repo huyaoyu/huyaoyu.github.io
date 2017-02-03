@@ -35,7 +35,7 @@ categories: gallery
 
 <p><img src="{{site.baseurl}}/my_collection/gallery/canned_motor_pump_exp/IMG_2483_acc_sensor_power_units.JPG" alt="<img>The back end units of the acceleration sensors."></p>
 
-* I was preparing to strike to test its free vibration frequency &darr;
+* I was preparing to strike in order to test its free vibration frequency &darr;
 
 <p><img src="{{site.baseurl}}/my_collection/gallery/canned_motor_pump_exp/IMG_2453_strike.JPG" alt="<img>I was preparing to strike the rotor with the hammer"></p>
 
