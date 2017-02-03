@@ -17,6 +17,8 @@ nav_order: 1
 
 **Address:** {{ site.data.common_data.myself.address }}, {{ site.data.common_data.myself.city }}, {{ site.data.common_data.myself.nation }}.
 
+**ResearchGate:** [Yaoyu_Hu][rg_addr]
+
 # Education #
 
 *   Shanghai Jiao Tong University
@@ -27,3 +29,4 @@ nav_order: 1
 
 	Mechanical design, manufacture & automation, master, 2009.7
 
+[rg_addr]: {{ site.data.common_data.myself.researchgate_addr }}
