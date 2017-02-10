@@ -1,0 +1,56 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+
+% new mathematical symbol
+\newcommand{\dd}{\; \mathrm{d}}
+\newcommand{\DD}{\; \mathrm{D}}
+\newcommand{\enangle}[1]{\langle {#1} \rangle}
+\newcommand{\parpar}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\parpard}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\eqrefnew}[1]{Eq.~\eqref{#1}}
+
+\title{Solution to Ex.~7.15}
+\author{Yaoyu Hu}
+
+\begin{document}
+\maketitle
+Note that it is assumed the following relation holds on the axis.
+\begin{equation} \label{eq:uplus}
+	u^+ \equiv \frac{\enangle{U}}{u_{\tau}} = \frac{1}{\kappa}\ln\left( \frac{yu_{\tau}}{\nu} \right) + B
+\end{equation}
+and we know that the mean velocity profile can be approximated by the logarithmic defect law (Eq.~(7.104) in the book)
+\begin{equation} \label{eq:DefectLaw}
+	\frac{U_0 - \enangle{U}}{u_{\tau}} = -\frac{1}{\kappa}\ln\left( \frac{y}{R} \right)
+\end{equation}
+and yet
+\begin{equation}
+	\frac{U_0 - \bar{U}}{u_{\tau}} = \frac{3}{2\kappa}
+\end{equation}
+follow the analysis procedures of the channel flow, if we add up \eqrefnew{eq:uplus} and \eqrefnew{eq:DefectLaw}, we get
+\begin{equation} \label{eq:added}
+	\frac{U_0}{u_{\tau}} = \frac{1}{\kappa}\ln\left( \frac{y}{\delta_{\nu}} \right) + B
+\end{equation}
+here $y$ has the same meaning of $\delta$, so
+\begin{equation}
+	\frac{y}{\delta_{\nu}} = \frac{\delta}{\delta_{\nu}} = \text{Re}_{\tau} = \frac{u_{\tau} \delta}{\nu}
+\end{equation}
+make use of Eq.~(7.104) on the book, we get
+\begin{equation} \label{eq:Re}
+	\text{Re}_{\tau} = \frac{2\bar{U}\delta}{\nu} \frac{\sqrt{f}}{4\sqrt{2}} = \text{Re}\frac{\sqrt{f}}{4\sqrt{2}}
+\end{equation}
+from Eq.~(7.107) on the book, the relationship between $U_0$ and $u_{\tau}$ in Eq.~(7.107) could be written
+\begin{equation} \label{eq:U0}
+	U_0 = \frac{3}{2\kappa}u_{\tau} + \bar{U}
+\end{equation}
+by using \eqrefnew{eq:U0} and \eqrefnew{eq:Re}, \eqrefnew{eq:added} can be written as
+\begin{equation} \label{eq:BeforeFinal}
+	\frac{3}{2\kappa} + \frac{\bar{U}}{u_{\tau}} = \frac{1}{\kappa}\ln\left( \text{Re} \frac{\sqrt{f}}{4\sqrt{2}} \right) + B
+\end{equation}
+use Eq.~(7.104) again, \eqrefnew{eq:BeforeFinal} can be changed into
+\begin{equation}
+	\frac{1}{\sqrt{f}} = \frac{1}{2\sqrt{2}\kappa}\ln\left( \text{Re}\sqrt{f} \right) - \frac{5\ln 2 - 2\kappa B + 3}{4\sqrt{2}\kappa}
+\end{equation}
+
+
+\end{document}

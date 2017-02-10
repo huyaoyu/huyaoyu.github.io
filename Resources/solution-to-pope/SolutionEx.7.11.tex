@@ -1,0 +1,117 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+
+\newcommand{\dd}{\; \mathrm{d}}
+\newcommand{\DD}{\; \mathrm{D}}
+\newcommand{\enangle}[1]{\langle {#1} \rangle}
+\newcommand{\parpar}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\parpard}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+
+\title{Solution to Ex.~7.11}
+\author{Yaoyu Hu}
+
+
+\begin{document}
+\maketitle
+
+In non-swirling statistically axisymmetric flows, the Reynolds equations of the pipe flow in polar-cylindrical coordinates are: \\
+continuity equation
+\begin{equation}
+	\parpar{\enangle{U}}{x} + \frac{1}{r}\parpar{}{r}(r\enangle{V}) = 0
+\end{equation}
+axial momentum equation
+\begin{equation} \label{eq:axial}
+	\frac{\bar{\DD} \enangle{U}}{\bar{\DD} t} = - \frac{1}{\rho}\frac{\partial \enangle{p}}{\partial x} - \parpar{}{x} \enangle{u^2} - \frac{1}{r}\parpar{}{r}(r\enangle{uv}) + \nu\nabla^2\enangle{U}
+\end{equation}
+and radial momentum equation
+\begin{equation}
+	\frac{\bar{\DD} \enangle{V}}{\bar{\DD} t} = - \frac{1}{\rho}\parpar{\enangle{p}}{r} - \parpar{}{x}\enangle{uv} - \frac{1}{r}\parpar{}{r}(r\enangle{v^2}) + \frac{\enangle{w^2}}{r} + \nu\left( \nabla^2\enangle{V} - \frac{\enangle{V}}{r^2} \right)
+\end{equation}
+where
+\begin{equation}
+	\frac{\bar{\DD}}{\bar{\DD} t} = \parpar{}{t} + \enangle{U}\parpar{}{x} + \enangle{V}\parpar{}{r} + \frac{\enangle{W}}{r}\parpar{}{\theta}
+\end{equation}
+and
+\begin{equation}
+	\nabla^2 = \parpard{}{x} + \frac{1}{r}\parpar{}{r}\left( r\parpar{}{r} \right) + \frac{1}{r^2}\parpard{}{\theta}
+\end{equation}
+
+Consider the fully developed turbulent pipe flow. The flow is statistically stationary and the statistics are only depend on r-coordinate. Then, the continuity equation can be rewritten as
+\begin{equation}
+	\frac{1}{r}\parpar{}{r}(r\enangle{V}) = 0
+\end{equation}
+$r$ is in range $(0,R)$, here we can assume that
+\begin{equation} \label{eq:cont}
+	\parpar{}{r}(r\enangle{V}) = 0
+\end{equation}
+with the assumption that
+\begin{equation}
+	\lim_{r\rightarrow 0}\frac{\enangle{V}}{r} = 0
+\end{equation}
+
+integrate Eq.~\eqref{eq:cont} with respect to $r$, we get
+\begin{equation}
+	r\enangle{V} = C_{\text{v1}}
+\end{equation}
+where $C_{\text{v1}}$ is constant. Apply the boundary condition that $\enangle{V} = 0$ at $r = R$, then $C_{\text{v1}} = 0$. And consequently, $\enangle{V} = 0$. Hence, the radial momentum equation can be rewritten as
+\begin{equation}
+	0 = -\frac{1}{\rho}\parpar{\enangle{p}}{r} - \frac{1}{r}\parpar{}{r}(r\enangle{v^2}) + \frac{\enangle{w^2}}{r}
+\end{equation}
+integrate with respect to $r$, we get
+\begin{equation}
+	\frac{\enangle{p}}{\rho} + \enangle{v^2} = \int\frac{\enangle{w^2}-\enangle{v^2}}{r}\dd r + C_{\text{v2}}
+\end{equation}
+where $C_{v2}$ is constant. With boundary condition $\enangle{v^2}=\enangle{w^2}=0$ and $\enangle{p}=p_{\text{w}}$ at $r=R$, we have
+\begin{equation}
+	\frac{p_{\text{w}}}{\rho} = C_{\text{v2}}
+\end{equation}
+then
+\begin{equation}
+	\frac{\enangle{p}}{\rho} + \enangle{v^2} = \int\frac{\enangle{w^2}-\enangle{v^2}}{r}\dd r + \frac{p_{\text{w}}}{\rho}
+\end{equation}
+note that the statistics of fluctuating velocity are independent on $x$, we have
+\begin{equation} \label{eq:dpdx}
+	\parpar{\enangle{p}}{x} = \frac{\dd p_{\text{w}}}{\dd x}
+\end{equation}
+substitute Eq.~\eqref{eq:dpdx} into Eq.~\eqref{eq:axial}
+\begin{equation} \label{eq:axial2}
+	0 = -\frac{1}{\rho}\frac{\dd p_{\text{w}}}{\dd x} - \frac{1}{r}\parpar{}{r}(r\enangle{uv}) + \nu\frac{1}{r}\parpar{}{r}\left( r\parpar{\enangle{U}}{r} \right)
+\end{equation}
+the shear stress is defined as
+\begin{equation} \label{eq:ShearStress}
+	\tau \equiv \rho\nu\frac{\dd \enangle{U}}{\dd r} - \rho\enangle{uv}
+\end{equation}
+rearrange Eq.~\eqref{eq:axial2} and make use of Eq.~\eqref{eq:ShearStress}
+\begin{equation}
+	0 = -\frac{\dd p_{\text{w}}}{\dd x} + \frac{1}{r}\parpar{}{r} (r \tau)
+\end{equation}
+rearrange
+\begin{equation} \label{eq:tau}
+	r \frac{\dd p_{\text{w}}}{\dd x} = \parpar{}{r} (r \tau)
+\end{equation}
+integrate Eq.~\eqref{eq:tau} with respect to $r$
+\begin{align}
+	r\tau &= \frac{1}{2}r^2\frac{\dd p_{\text{w}}}{\dd x} + C_{\text{v3}} \nonumber \\
+	\tau &= \frac{1}{2}r\frac{\dd p_{\text{w}}}{\dd x} + C_{\text{v3}}'
+\end{align}
+Since the flow in the pipe is fully developed, it is reasonable to assume that the flow is axisymmetric and the shear stress along the central line ($r=0$) is 0. Then $C_{\text{v3}}' = 0$. And finally
+\begin{equation}
+	\tau = \frac{1}{2}r\frac{\dd p_{\text{w}}}{\dd x}
+\end{equation}
+
+If we introduce the wall shear stress
+\begin{equation}
+	\tau_{\text{w}} = -\tau(R)
+\end{equation}
+thus
+\begin{equation}
+	-\tau_{\text{w}} = \frac{1}{2}R\frac{\dd p_{\text{w}}}{\dd x}
+\end{equation}
+after rearrange the terms, we get
+\begin{equation}
+	-\frac{\dd p_{\text{w}}}{\dd x} = 2\frac{\tau_{\text{w}}}{R}
+\end{equation}
+
+
+\end{document}

@@ -1,0 +1,36 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+
+% new mathematical symbol
+\newcommand{\dd}{\; \mathrm{d}}
+\newcommand{\DD}{\; \mathrm{D}}
+\newcommand{\enangle}[1]{\langle {#1} \rangle}
+\newcommand{\parpar}[2]{\frac{\partial {#1}}{\partial {#2}}}
+\newcommand{\parpard}[2]{\frac{\partial^2 {#1}}{\partial {#2}^2}}
+\newcommand{\eqrefnew}[1]{Eq.~\eqref{#1}}
+
+\newcommand{\divclyu}[1]{\enangle{U}\parpar{\enangle{#1} }{r} + \enangle{V}\frac{1}{r}\parpar{ \enangle{#1} }{\theta} + \enangle{W}\parpar{ \enangle{#1} }{z}}
+\newcommand{\divclyr}[1]{\frac{1}{r}\parpar{r \enangle{u #1} }{r} + \frac{1}{r}\parpar{ \enangle{v #1} }{\theta} + \parpar{ \enangle{w #1} }{z}}
+
+\title{Solution to Ex.~7.17}
+\author{Yaoyu Hu}
+
+\begin{document}
+\maketitle
+Eq.~(7.119) on the book is
+\begin{equation} \label{eq:u+}
+	u^+ = \frac{1}{\kappa}\ln\left( \frac{y}{s} \right) + B_2
+\end{equation}
+we have to associate friction factor $f$ with $u^+$, here Eq.~(7.106) and Eq.~(7.107) come in handy. Considering Eq.~(7.104), (7.107) $\ominus$ (7.106) equals
+\begin{equation} \label{eq:substracted}
+	\frac{\enangle{U}}{u_{\tau}} - \frac{\bar{U}}{u_{\tau}} = u^+ - \sqrt{\frac{8}{f}} = \frac{3}{2\kappa} + \frac{1}{\kappa}\ln\left( \frac{y}{R} \right)
+\end{equation}
+substitute $u^+$ by \eqrefnew{eq:u+} and rearrange, we get
+\begin{equation}
+	\sqrt{\frac{8}{f}} = \frac{1}{\kappa}\left( \ln\left( \frac{y}{s} \right) - \ln\left( \frac{y}{R} \right) \right) - \frac{3}{2\kappa} + B_2
+\end{equation}
+the rest of the work is easy.
+
+
+\end{document}

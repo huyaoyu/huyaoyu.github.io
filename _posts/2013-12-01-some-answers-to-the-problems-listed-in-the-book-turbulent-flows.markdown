@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "Some solutions to the exercises listed in the book 'Turbulent flows' of Stephen B. Pope"
+date:   2013-10-31 12:00:00 +0800
+categories: technical
+---
+
+The followings are some solutions that I wrote down when I was reading the book of Stephen B. Pope, **Turbulent Flows**. Pope's book is really remarkable. It leads me into the mysterious world of turbulence.
+
+* Ex.7.11 &darr;. Download the [PDF file]({{site.baseurl}}/Resources/solution-to-pope/SolutionEx.7.11.pdf).
+
+	<embed src="{{site.baseurl}}/Resources/solution-to-pope/SolutionEx.7.11.pdf" width="800px" height="400px">
+
+* Ex.7.15 &darr;. Download the [PDF file]({{site.baseurl}}/Resources/solution-to-pope/SolutionEx.7.15.pdf).
+
+	<embed src="{{site.baseurl}}/Resources/solution-to-pope/SolutionEx.7.15.pdf" width="800px" height="400px">
+
+* Ex.7.17 &darr;. Download the [PDF file]({{site.baseurl}}/Resources/solution-to-pope/SolutionEx.7.17(1).pdf).
+
+	<embed src="{{site.baseurl}}/Resources/solution-to-pope/SolutionEx.7.17(1).pdf" width="800px" height="400px">
+
+
