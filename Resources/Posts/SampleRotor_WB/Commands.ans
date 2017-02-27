@@ -1,0 +1,111 @@
+! =================== Bearing/Seal Data. ==================
+
+! The No.1 bearing/seal :
+*DIM, CYY_1, table, 10, 1, 1, omegs
+CYY_1(1,0) = +3.141593e+01, +9.424778e+01, +1.570796e+02, +2.199115e+02, +2.827433e+02, +3.455752e+02, +4.084070e+02, +4.712389e+02, +5.340707e+02, +5.969026e+02
+CYY_1(1,1) = +2.196985e+01, +7.312787e+01, +1.309065e+02, +1.919895e+02, +2.551221e+02, +3.196643e+02, +3.852426e+02, +4.516186e+02, +5.186302e+02, +5.861620e+02
+
+*DIM, CZZ_1, table, 10, 1, 1, omegs
+CZZ_1(1,0) = +3.141593e+01, +9.424778e+01, +1.570796e+02, +2.199115e+02, +2.827433e+02, +3.455752e+02, +4.084070e+02, +4.712389e+02, +5.340707e+02, +5.969026e+02
+CZZ_1(1,1) = +2.196985e+01, +7.312787e+01, +1.309065e+02, +1.919895e+02, +2.551221e+02, +3.196643e+02, +3.852426e+02, +4.516186e+02, +5.186302e+02, +5.861620e+02
+
+*DIM, CYZ_1, table, 10, 1, 1, omegs
+CYZ_1(1,0) = +3.141593e+01, +9.424778e+01, +1.570796e+02, +2.199115e+02, +2.827433e+02, +3.455752e+02, +4.084070e+02, +4.712389e+02, +5.340707e+02, +5.969026e+02
+CYZ_1(1,1) = +3.469294e+00, +5.661876e+00, +6.609728e+00, +7.253121e+00, +7.759821e+00, +8.189077e+00, +8.568355e+00, +8.912549e+00, +9.230628e+00, +9.528411e+00
+
+*DIM, CZY_1, table, 10, 1, 1, omegs
+CZY_1(1,0) = +3.141593e+01, +9.424778e+01, +1.570796e+02, +2.199115e+02, +2.827433e+02, +3.455752e+02, +4.084070e+02, +4.712389e+02, +5.340707e+02, +5.969026e+02
+CZY_1(1,1) = -3.469294e+00, -5.661876e+00, -6.609728e+00, -7.253121e+00, -7.759821e+00, -8.189077e+00, -8.568355e+00, -8.912549e+00, -9.230628e+00, -9.528411e+00
+
+*DIM, KYY_1, table, 10, 1, 1, omegs
+KYY_1(1,0) = +3.141593e+01, +9.424778e+01, +1.570796e+02, +2.199115e+02, +2.827433e+02, +3.455752e+02, +4.084070e+02, +4.712389e+02, +5.340707e+02, +5.969026e+02
+KYY_1(1,1) = +1.293359e+03, +9.234419e+03, +2.168796e+04, +3.735900e+04, +5.558483e+04, +7.595948e+04, +9.820595e+04, +1.221216e+05, +1.475507e+05, +1.743694e+05
+
+*DIM, KZZ_1, table, 10, 1, 1, omegs
+KZZ_1(1,0) = +3.141593e+01, +9.424778e+01, +1.570796e+02, +2.199115e+02, +2.827433e+02, +3.455752e+02, +4.084070e+02, +4.712389e+02, +5.340707e+02, +5.969026e+02
+KZZ_1(1,1) = +1.293359e+03, +9.234419e+03, +2.168796e+04, +3.735900e+04, +5.558483e+04, +7.595948e+04, +9.820595e+04, +1.221216e+05, +1.475507e+05, +1.743694e+05
+
+*DIM, KYZ_1, table, 10, 1, 1, omegs
+KYZ_1(1,0) = +3.141593e+01, +9.424778e+01, +1.570796e+02, +2.199115e+02, +2.827433e+02, +3.455752e+02, +4.084070e+02, +4.712389e+02, +5.340707e+02, +5.969026e+02
+KYZ_1(1,1) = -1.169281e+02, -9.037411e+02, -1.938304e+03, -3.128053e+03, -4.437975e+03, -5.848461e+03, -7.346623e+03, -8.923194e+03, -1.057111e+04, -1.228476e+04
+
+*DIM, KZY_1, table, 10, 1, 1, omegs
+KZY_1(1,0) = +3.141593e+01, +9.424778e+01, +1.570796e+02, +2.199115e+02, +2.827433e+02, +3.455752e+02, +4.084070e+02, +4.712389e+02, +5.340707e+02, +5.969026e+02
+KZY_1(1,1) = +1.169281e+02, +9.037411e+02, +1.938304e+03, +3.128053e+03, +4.437975e+03, +5.848461e+03, +7.346623e+03, +8.923194e+03, +1.057111e+04, +1.228476e+04
+
+*DIM, MXX_1, table, 10, 1, 1, omegs
+MXX_1(1,0) = +3.141593e+01, +9.424778e+01, +1.570796e+02, +2.199115e+02, +2.827433e+02, +3.455752e+02, +4.084070e+02, +4.712389e+02, +5.340707e+02, +5.969026e+02
+MXX_1(1,1) = +1.414303e-01, +1.262416e-01, +1.149731e-01, +1.070335e-01, +1.010909e-01, +9.643798e-02, +9.267115e-02, +8.954305e-02, +8.689294e-02, +8.461134e-02
+
+! =================== First spring. =======================
+
+ESEL, , ENAME, , 14  ! Select Combin14 element.
+
+! Define local variable
+P_ELEM_NB = 0
+! Assign the element number of the first found element of Combine14 type.
+P_ELEM_NB = elnext(P_ELEM_NB)
+
+! Get the element type identifier number of elemnb
+*GET, P_ELEM_T, ELEM, P_ELEM_NB, ATTR, TYPE
+
+! Set the type to be Combi214
+ET, P_ELEM_T, 214
+
+! Set KEYOPT for Combi214
+KEYOPT, P_ELEM_T, 2, 2
+KEYOPT, P_ELEM_T, 3, 1
+! KEYOPT, P_ELEM_T, 4, 1
+
+! Get the real number identifier number of original Combin14
+*GET, P_ELEM_T, ELEM, P_ELEM_NB, ATTR, REAL
+
+! Set the real number for Combi214
+R, P_ELEM_T, 8e7, 8e7, 0, 0, 0, 0
+RMORE, 0, 0
+
+! =================== Second spring. =======================
+
+! Assign the element number of the Second found element of Combin14 type.
+P_ELEM_NB = elnext(P_ELEM_NB)
+
+! Get the element type identifier number of elemnb
+*GET, P_ELEM_T, ELEM, P_ELEM_NB, ATTR, TYPE
+
+! Set the type to be Combi214
+ET, P_ELEM_T, 214
+
+! Set KEYOPT for Combi214
+KEYOPT, P_ELEM_T, 2, 2
+KEYOPT, P_ELEM_T, 3, 1
+! KEYOPT, P_ELEM_T, 4, 1
+
+! Get the real number identifier number of original Combin14
+*GET, P_ELEM_T, ELEM, P_ELEM_NB, ATTR, REAL
+
+! Set the real number for Combi214
+R, P_ELEM_T, 8e7, 8e7, 0, 0, 0, 0
+RMORE, 0, 0
+
+! =================== 3rd spring. =======================
+
+! Assign the element number of the 3rd found element of Combin14 type.
+P_ELEM_NB = elnext(P_ELEM_NB)
+
+! Get the element type identifier number of elemnb
+*GET, P_ELEM_T, ELEM, P_ELEM_NB, ATTR, TYPE
+
+! Set the type to be Combi214
+ET, P_ELEM_T, 214
+
+! Set KEYOPT for Combi214
+KEYOPT, P_ELEM_T, 2, 2
+KEYOPT, P_ELEM_T, 3, 1
+! KEYOPT, P_ELEM_T, 4, 1
+
+! Get the real number identifier number of original Combin14
+*GET, P_ELEM_T, ELEM, P_ELEM_NB, ATTR, REAL
+
+! Set the real number for Combi214
+R, P_ELEM_T, %KYY_1%, %KZZ_1%, %KYZ_1%, %KZY_1%, %CYY_1%, %CZZ_1%
+RMORE, %CYZ_1%, %CZY_1%
