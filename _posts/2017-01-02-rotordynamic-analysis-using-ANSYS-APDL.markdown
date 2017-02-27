@@ -33,7 +33,7 @@ In this post, I would like to emphasis on some topics that are hard to find refe
 
 We could take an overhang configuration as the imaginary pump rotor. Overhang means that the impeller of the pump is installed outside the range of supporting bearings and it could be illustrated in the following figure. The two rotating components are the impeller and coupling. The rotor is supported on two roller bearings. The major dimensions are also listed in the figure.
 
-<img src="{{site.baseurl}}/" alt="<img>Imaginary pump rotor">
+<img src="{{site.baseurl}}/Resources/Posts/RotorAPDL/SchematicDraftAnnotated.png" alt="<img>Imaginary pump rotor">
 
 <h2><a name="overview_of_major_steps">Overview of major steps</a></h2>>
 
@@ -79,7 +79,7 @@ The real challenge comes up when we are setting the stiffness and damping parame
 
 	Real world bearings have variable stiffness and damping characteristics depending on rotating speed. The "table" functionality comes in handy when dealing with this type of bearings. Before setting the real constants of a COMBI214 element, the user should specify a table by `*DIM` command. The real magic is how we link the table content to rotating speed. The table should represents a curve of stiffness or damping parameter versus rotating speed. We have to explicitly link the rotating speed to the internal primary variable OMEGS when declaring a table with `*DIM` command. The practical `*DIM` command may look like the following.
 
-	*DIM, \<table name\>, table, \<number of points\>, 1, 1, OMEGS
+	`*DIM, <table name>, table, <number of points>, 1, 1, OMEGS`
 
 	Here I have to point out that ANSYS Mechanical APDL has a limit for the number of points in a table. It is 10.
 
@@ -135,4 +135,20 @@ Here we have two key points to discuss. First is the `SYNCHRO` command. For a su
 
 <h1>Working example</h1>
 
-A working example based on the imaginary pump rotor is provide here.
+A working example based on the imaginary pump rotor is provide here. [MI_CS_SampleRotor.ans]({{site.baseurl}}/Resources/Posts/RotorAPDL/MI_CS_SampleRotor.ans)
+
+This APDL code can perform modal analysis and damped unbalanced response analysis. The user could control the solution type with several pre-defined flag variables. 
+
+The impeller ring could provide supporting effect to the pump rotor. In this sample model, the width of the running clearance is 0.5 mm.
+
+A simple beam model is built to calculate the critical speed and unbalanced response of the sample pump rotor. And the model is shown in the following figure. Here, every pair of vertical line and number represents a node. We have 20 nodes and 19 beam elements.
+
+<img src="{{site.baseurl}}/Resources/Posts/RotorAPDL/SampleRotor_BeamModel.png" alt="<img>Beam model">
+
+We can plot a Campbell diagram based on the results of the calculation. This is shown in the following figure. The first order forward critical speed of this sample rotor is approximately 3179 rpm.
+
+<img src="{{site.baseurl}}/Resources/Posts/RotorAPDL/SampleRotor_Campbell_Chopped.png" alt="<img>Campbell diagram">
+
+Likewise, the result of the unbalanced response analysis is illustrated in the following figure. Some unbalanced weight is applied on the left-most node of the rotordynamic Model. This node's displacement amplitudes versus rotating speed are drawn as a curve. Those calculated amplitudes of displacement are non-dimensionalized by calculating the ratio of the amplitude to the width of the running clearance.
+
+<img src="{{site.baseurl}}/Resources/Posts/RotorAPDL/SampleRotor_UnbalancedResponse_APDL.png" alt="<img>Unbalanced response">

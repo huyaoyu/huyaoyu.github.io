@@ -1,0 +1,528 @@
+!
+! ========================= File information ============================
+! 
+! This file is the model input file for the rotordynamic analysis of a 
+! simple pump rotor.
+!
+! Detail content
+! ==============
+!
+! Number of elements:                    19
+! Number of bearings:                     2
+! Number of seals:                        1
+! Number of rotating components:          2
+! Number of rotating speed calculated:   50
+! Beginning rotating speed (rpm):      1000
+! Ending rotating speed (rpm):         5000
+! Number of modes extracted:              4
+!
+! Usage
+! =====
+!
+! Copy this file to the working directory.
+
+! Change input parameters. The user defined parameters are listed in a Special region of this model input file. Each
+! user defined parameter has a comment, which indicates that the associated parameter is in the user defined category.
+!
+! To change the analysis type, the use has to change the value of P_ANALYSIS_TYPE.
+!
+! To toggle the presence of supporting effects of running clearance in the pump, assign 0 or 1 to P_FLAG_HAVE_SEAL.
+! To toggle the state of the rotor to be dry or wet in a modal analysis, assign 0 or 1 to P_FLAG_DRY.
+!
+! It is notable that for modal analysis, the range of speed is set by P_NW, P_RSPEED_BEGIN and P_RSPEED_END. For
+! unbalanced response analysis, the range of speed is set by P_NSUBSTEP, P_HARMIC_F1 and P_HARMIC_F2.
+!
+! In the Ansys APDL environment, issue the following menu commands:
+! File->Read input from ...
+! Then choose this file to run. 
+!
+! For modal analysis, the results will be written in the files with the names 'ModeAnalysis_Loop.dat' and
+! 'MA_Damp_Loop.dat' located in the current working directory. They are the mode frequency result and damping factor
+! result, respectively.
+! 
+! There are several columns in 'ModeAnalysis_Loop.dat'. The actual number of columns is defined by the user defined
+! parameter 'P_NBF'. Each value in this file is a mode frequency. The first row is the result of the first rotating
+! speed, and the last row is the result of the last rotating speed. The user should finish the task to find the possible
+! critical speeds.
+! 
+! For 'MA_Damp_Loop.dat', the data is arranged in the same way as 'ModeAnalysis_Loop.dat'.
+! 
+! Author
+! ======
+! 
+! HU Yaoyu <huyaoyu@sjtu.edu.cn>
+!
+! Affiliation
+! ===========
+!
+! Shanghai Jiao Tong University, Shanghai, P.R.China
+! 
+! Date
+! ====
+!
+! Created: 2017-02-27
+! Modified:
+!
+! Change log
+! ==========
+!
+! (No changes)
+!
+! Copy right
+! ==========
+!
+! This file is the production from the scientific researches conducted by the authors. It is owned by the authors and
+! the affiliations the authors belong to.
+!
+
+! ===================== Local constants. ==========================
+
+C_ANALYSIS_TYPE_MODAL   = 1 ! Modal analysis
+C_ANALYSIS_TYPE_UNB_RES = 2 ! Unbalanced response analysis
+
+! ===================== User defined parameters ===================
+
+P_NW                = 50      ! total number of rotating speeds
+P_RSPEED_BEGIN      = 1000    ! beginning rotating speed, prm
+P_RSPEED_END        = 5000    ! ending rotating speed, rpm
+     
+P_RO                = 8860    ! density of the rotor material, kg.m^-3
+P_PEX               = 1.95e11 ! elastic modulus of the rotor material, Pa
+P_POISSON           = 0.31    ! Poisson's ratio of the rotor material
+   
+P_FLAG_DRY          = 0       ! flag parameter, 1 for 'dry rotor' defined in API610 standard.
+P_FLAG_HAVE_SEAL    = 1       ! flag parameter, 1 for model includes seals, 0 for no seals
+
+P_BEARING_STIFFNESS = 8e7  ! Stiffness coefficients of the roller bearing.
+
+P_UNBAL       = 4.4e-5  ! Unbalance, kg.m.
+P_UNBAL_NODE  = 1       ! Unbalance force application node.
+
+P_NSUBSTEP    = 50      ! Total number of rotating speeds for unbalanced response analysis.
+P_HARMIC_F1   = 1000/60 ! Starting frequency of unbalanced response analysis. Hz.
+P_HARMIC_F2   = 5000/60 ! Ending frequency of unbalanced response analysis, Hz.
+
+! P_ANALYSIS_TYPE = C_ANALYSIS_TYPE_MODAL
+P_ANALYSIS_TYPE = C_ANALYSIS_TYPE_UNB_RES
+
+! ================== End of user defined parameters ===============
+
+
+! ========================= 1. Pre-process ===========================
+
+/PREP7
+
+! == 1.1 == generate speeds
+
+*DIM, P_SPIN, ARRAY, P_NW
+
+P_SPEED_STEP_SIZE = (P_RSPEED_END-P_RSPEED_BEGIN)/(P_NW-1)
+*DO, I, 1, P_NW
+	P_SPIN(I) = P_RSPEED_BEGIN+(I-1)*P_SPEED_STEP_SIZE
+*ENDDO
+
+! == 1.2 == rotor material configuration
+P_PGXY = P_PEX/(2*(1+P_POISSON))
+
+MP,   EX, 1, P_PEX
+MP, DENS, 1, P_RO
+MP,  GXY, 1, P_PGXY
+! MP, DMPR, 1, 0.005
+
+! == 1.3 == prepare data for BEAM188 elements
+! Set element type
+ET, 1, BEAM188, , , 2
+
+P_NELEMENTS = 19 ! total number of rotor elements
+
+P_NRADII = P_NELEMENTS
+! outer radii array
+*DIM, P_ORADIUS, ARRAY, P_NRADII
+P_ORADIUS(1)  = 0.0150
+P_ORADIUS(2)  = 0.0225
+P_ORADIUS(3)  = 0.0225
+P_ORADIUS(4)  = 0.0225
+P_ORADIUS(5)  = 0.0225
+P_ORADIUS(6)  = 0.0225
+P_ORADIUS(7)  = 0.0225
+P_ORADIUS(8)  = 0.0225
+P_ORADIUS(9)  = 0.0450
+P_ORADIUS(10) = 0.0450
+P_ORADIUS(11) = 0.0500
+P_ORADIUS(12) = 0.0500
+P_ORADIUS(13) = 0.0500
+P_ORADIUS(14) = 0.0500
+P_ORADIUS(15) = 0.0500
+P_ORADIUS(16) = 0.0450
+P_ORADIUS(17) = 0.0450
+P_ORADIUS(18) = 0.0350
+P_ORADIUS(19) = 0.0150
+
+! inner radii array
+*DIM, P_IRADIUS, ARRAY, P_NRADII
+P_IRADIUS(1)  = 0.0
+P_IRADIUS(2)  = 0.0
+P_IRADIUS(3)  = 0.0
+P_IRADIUS(4)  = 0.0
+P_IRADIUS(5)  = 0.0
+P_IRADIUS(6)  = 0.0
+P_IRADIUS(7)  = 0.0
+P_IRADIUS(8)  = 0.0
+P_IRADIUS(9)  = 0.0
+P_IRADIUS(10) = 0.0
+P_IRADIUS(11) = 0.0
+P_IRADIUS(12) = 0.0
+P_IRADIUS(13) = 0.0
+P_IRADIUS(14) = 0.0
+P_IRADIUS(15) = 0.0
+P_IRADIUS(16) = 0.0
+P_IRADIUS(17) = 0.0
+P_IRADIUS(18) = 0.0
+P_IRADIUS(19) = 0.0
+
+! set data for BEAM188 element
+*DO, I, 1, P_NRADII
+	*IF, P_IRADIUS(I), EQ, 0, THEN
+	SECTYPE, I, BEAM, CSOLID
+	SECDATA, P_ORADIUS(I), 8, 8
+	*ELSE
+	SECTYPE, I, BEAM, CTUBE
+	SECDATA, P_IRADIUS(I), P_ORADIUS(I)
+	*ENDIF
+*ENDDO
+
+! == 1.4 == prepare data for MASS21 elements
+! set element type
+ET, 2, MASS21
+KEYOPT, 2, 1, 0
+KEYOPT, 2, 2, 0
+KEYOPT, 2, 3, 0
+
+ET, 3, MASS21
+KEYOPT, 3, 1, 0
+KEYOPT, 3, 2, 0
+KEYOPT, 3, 3, 2
+
+! prepare element nodes and real numbers
+P_NMASSES = 2
+
+*DIM, P_MASS_REAL, ARRAY, P_NMASSES
+*DIM, P_MASS_NODE, ARRAY, P_NMASSES
+
+P_MASS_REAL(1) = 1
+P_MASS_REAL(2) = 2
+
+*IF, P_FLAG_DRY, EQ, 0, THEN
+	*IF, P_FLAG_HAVE_SEAL, EQ, 1, THEN
+		P_NMASSES_SEAL = 1
+		*DIM, P_MASS_REAL_SEAL, ARRAY, P_NMASSES_SEAL
+		*DIM, P_MASS_NODE_SEAL, ARRAY, P_NMASSES_SEAL
+		P_MASS_REAL_SEAL(1) = 11
+	*ENDIF
+*ENDIF
+
+
+! real constants for MASS21 elements
+! Mxx, Myy, Mzz, Ixx(polar moment of inertia), Iyy(diameter moment of inertia), Izz(polar moment of inertia)
+
+! impeller & nut
+R, P_MASS_REAL(1), 4, 4, 4, 1.3e-2, 8.32e-3, 8.32e-3
+P_MASS_NODE(1) = 2
+
+! coupling
+R, P_MASS_REAL(2), 2.6, 2.6, 2.6, 3.91e-3, 2.59e-3, 2.59e-3
+P_MASS_NODE(2) = 20
+
+*IF, P_FLAG_HAVE_SEAL, EQ, 1, AND, P_FLAG_DRY, EQ, 0, THEN
+	! impeller ring, dummy input
+	R, P_MASS_REAL_SEAL(1), 0.1
+	P_MASS_NODE_SEAL(1) = 2
+*ENDIF
+
+! == 1.5 == prepare data for COMBI214 elements
+! set element type for bearings/seals
+ET, 11, COMBI214
+KEYOPT, 11, 2, 1
+KEYOPT, 11, 3, 1
+
+! prepare element nodes and real numbers
+*IF, P_FLAG_HAVE_SEAL, EQ, 1, AND, P_FLAG_DRY, EQ, 0, THEN
+	P_NBEARINGS = 3
+*ELSE
+	P_NBEARINGS = 2
+*ENDIF
+
+*DIM, P_BEARING_REAL, ARRAY, P_NBEARINGS
+*DIM, P_BEARING_NODE, ARRAY, P_NBEARINGS, 2
+
+P_BEARING_REAL(1) = 21
+P_BEARING_REAL(2) = 22
+
+*IF, P_FLAG_HAVE_SEAL, EQ, 1, AND, P_FLAG_DRY, EQ, 0, THEN
+	P_BEARING_REAL(3) = 23
+*ENDIF
+
+! Bearing tables
+! The No.1 bearing/seal :
+*DIM, CYY_1, table, 10, 1, 1, omegs
+CYY_1(1,0) = +3.141593e+01, +9.424778e+01, +1.570796e+02, +2.199115e+02, +2.827433e+02, +3.455752e+02, +4.084070e+02, +4.712389e+02, +5.340707e+02, +5.969026e+02
+CYY_1(1,1) = +2.196985e+01, +7.312787e+01, +1.309065e+02, +1.919895e+02, +2.551221e+02, +3.196643e+02, +3.852426e+02, +4.516186e+02, +5.186302e+02, +5.861620e+02
+
+*DIM, CZZ_1, table, 10, 1, 1, omegs
+CZZ_1(1,0) = +3.141593e+01, +9.424778e+01, +1.570796e+02, +2.199115e+02, +2.827433e+02, +3.455752e+02, +4.084070e+02, +4.712389e+02, +5.340707e+02, +5.969026e+02
+CZZ_1(1,1) = +2.196985e+01, +7.312787e+01, +1.309065e+02, +1.919895e+02, +2.551221e+02, +3.196643e+02, +3.852426e+02, +4.516186e+02, +5.186302e+02, +5.861620e+02
+
+*DIM, CYZ_1, table, 10, 1, 1, omegs
+CYZ_1(1,0) = +3.141593e+01, +9.424778e+01, +1.570796e+02, +2.199115e+02, +2.827433e+02, +3.455752e+02, +4.084070e+02, +4.712389e+02, +5.340707e+02, +5.969026e+02
+CYZ_1(1,1) = +3.469294e+00, +5.661876e+00, +6.609728e+00, +7.253121e+00, +7.759821e+00, +8.189077e+00, +8.568355e+00, +8.912549e+00, +9.230628e+00, +9.528411e+00
+
+*DIM, CZY_1, table, 10, 1, 1, omegs
+CZY_1(1,0) = +3.141593e+01, +9.424778e+01, +1.570796e+02, +2.199115e+02, +2.827433e+02, +3.455752e+02, +4.084070e+02, +4.712389e+02, +5.340707e+02, +5.969026e+02
+CZY_1(1,1) = -3.469294e+00, -5.661876e+00, -6.609728e+00, -7.253121e+00, -7.759821e+00, -8.189077e+00, -8.568355e+00, -8.912549e+00, -9.230628e+00, -9.528411e+00
+
+*DIM, KYY_1, table, 10, 1, 1, omegs
+KYY_1(1,0) = +3.141593e+01, +9.424778e+01, +1.570796e+02, +2.199115e+02, +2.827433e+02, +3.455752e+02, +4.084070e+02, +4.712389e+02, +5.340707e+02, +5.969026e+02
+KYY_1(1,1) = +1.293359e+03, +9.234419e+03, +2.168796e+04, +3.735900e+04, +5.558483e+04, +7.595948e+04, +9.820595e+04, +1.221216e+05, +1.475507e+05, +1.743694e+05
+
+*DIM, KZZ_1, table, 10, 1, 1, omegs
+KZZ_1(1,0) = +3.141593e+01, +9.424778e+01, +1.570796e+02, +2.199115e+02, +2.827433e+02, +3.455752e+02, +4.084070e+02, +4.712389e+02, +5.340707e+02, +5.969026e+02
+KZZ_1(1,1) = +1.293359e+03, +9.234419e+03, +2.168796e+04, +3.735900e+04, +5.558483e+04, +7.595948e+04, +9.820595e+04, +1.221216e+05, +1.475507e+05, +1.743694e+05
+
+*DIM, KYZ_1, table, 10, 1, 1, omegs
+KYZ_1(1,0) = +3.141593e+01, +9.424778e+01, +1.570796e+02, +2.199115e+02, +2.827433e+02, +3.455752e+02, +4.084070e+02, +4.712389e+02, +5.340707e+02, +5.969026e+02
+KYZ_1(1,1) = -1.169281e+02, -9.037411e+02, -1.938304e+03, -3.128053e+03, -4.437975e+03, -5.848461e+03, -7.346623e+03, -8.923194e+03, -1.057111e+04, -1.228476e+04
+
+*DIM, KZY_1, table, 10, 1, 1, omegs
+KZY_1(1,0) = +3.141593e+01, +9.424778e+01, +1.570796e+02, +2.199115e+02, +2.827433e+02, +3.455752e+02, +4.084070e+02, +4.712389e+02, +5.340707e+02, +5.969026e+02
+KZY_1(1,1) = +1.169281e+02, +9.037411e+02, +1.938304e+03, +3.128053e+03, +4.437975e+03, +5.848461e+03, +7.346623e+03, +8.923194e+03, +1.057111e+04, +1.228476e+04
+
+*DIM, MXX_1, table, 10, 1, 1
+MXX_1(1,0) = +3.141593e+01, +9.424778e+01, +1.570796e+02, +2.199115e+02, +2.827433e+02, +3.455752e+02, +4.084070e+02, +4.712389e+02, +5.340707e+02, +5.969026e+02
+MXX_1(1,1) = +1.414303e-01, +1.262416e-01, +1.149731e-01, +1.070335e-01, +1.010909e-01, +9.643798e-02, +9.267115e-02, +8.954305e-02, +8.689294e-02, +8.461134e-02
+
+! set real constants and node ids for bearings/seals
+R, P_BEARING_REAL(1), P_BEARING_STIFFNESS, P_BEARING_STIFFNESS, 0.000000e+00, 0.000000e+00, 0.000000e+00, 0.000000e+00
+RMORE, 0.000000e+00, 0.000000e+00
+P_BEARING_NODE(1, 1) = 10
+P_BEARING_NODE(1, 2) = 1000
+
+R, P_BEARING_REAL(2), P_BEARING_STIFFNESS, P_BEARING_STIFFNESS, 0.000000e+00, 0.000000e+00, 0.000000e+00, 0.000000e+00
+RMORE, 0.000000e+00, 0.000000e+00
+P_BEARING_NODE(2, 1) = 17
+P_BEARING_NODE(2, 2) = 1700
+
+*IF, P_FLAG_HAVE_SEAL, EQ, 1, AND, P_FLAG_DRY, EQ, 0, THEN
+	R, P_BEARING_REAL(3), %KYY_1%, %KZZ_1%, %KYZ_1%, %KZY_1%, %CYY_1%, %CZZ_1%
+	RMORE, %CYZ_1%, %CZY_1%
+	P_BEARING_NODE(3, 1) = 2
+	P_BEARING_NODE(3, 2) = 200
+*ENDIF
+
+! == 1.5 == geometry
+
+! node list for the rotor
+N, 1,  0.00 
+N, 2,  0.03 
+N, 3,  0.11 
+N, 4,  0.19 
+N, 5,  0.27 
+N, 6,  0.35 
+N, 7,  0.43 
+N, 8,  0.51 
+N, 9,  0.59 
+N, 10, 0.63 
+N, 11, 0.67 
+N, 12, 0.76 
+N, 13, 0.85 
+N, 14, 0.94 
+N, 15, 1.03 
+N, 16, 1.12 
+N, 17, 1.16 
+N, 18, 1.20 
+N, 19, 1.26 
+N, 20, 1.31 
+
+P_LAST_ROTOR_NODE = 37
+
+! node list for the bearings/seals
+P_BRG = 0.0
+N, 1700, 1.16, P_BRG
+N, 1000, 0.63, P_BRG
+N,  200, 0.03, P_BRG
+
+! == 1.6 == elements creation
+
+! rotor elements
+TYPE, 1
+MAT,  1
+*DO, I, 1, P_NRADII
+	SECNUM, I
+	E, I, I+1
+*ENDDO
+
+! mass elements
+TYPE, 2
+*DO, I, 1, P_NMASSES
+	REAL, P_MASS_REAL(I)
+	E, P_MASS_NODE(I)
+*ENDDO
+
+*IF, P_FLAG_HAVE_SEAL, EQ, 1, AND, P_FLAG_DRY, EQ, 0, THEN
+	TYPE, 3
+	*DO, I, 1, P_NMASSES_SEAL
+		REAL, P_MASS_REAL_SEAL(I)
+		E, P_MASS_NODE_SEAL(I)
+	*ENDDO
+*ENDIF
+
+! bearing elements
+TYPE, 11
+*DO, I, 1, P_NBEARINGS
+	REAL, P_BEARING_REAL(I)
+	E, P_BEARING_NODE(I,2), P_BEARING_NODE(I,1)
+*ENDDO
+
+! element component
+CM, PC_ROTOR, ELEM
+
+*IF, P_ANALYSIS_TYPE, EQ, C_ANALYSIS_TYPE_UNB_RES, THEN
+	ALLSEL
+*ENDIF
+
+FINI
+
+! ====================== 2. Solve =====================
+
+/SOLU
+
+! == 2.1. Set output file
+/OUT, SCRATCH
+
+! == 2.2. Boundary conditions
+
+! define constraints for all nodes
+D, ALL, UX
+D, ALL, ROTX
+
+! constraint the bearings nodes
+*DO, I, 1, P_NBEARINGS
+	D, P_BEARING_NODE(I,2), ALL
+*ENDDO
+
+! The stiffness should be infinity when calculate the dry modal frequency, API610 11th.
+*IF, P_FLAG_DRY, EQ, 1, THEN
+	*DO, I, 1, P_NBEARINGS
+		D, P_BEARING_NODE(I,1), UY
+		D, P_BEARING_NODE(I,1), UZ
+	*ENDDO
+*ENDIF
+
+*IF, P_ANALYSIS_TYPE, EQ, C_ANALYSIS_TYPE_UNB_RES, THEN
+	! define the unbalance force
+	F, P_UNBAL_NODE, FY, P_UNBAL
+	F, P_UNBAL_NODE, FZ, ,-P_UNBAL
+*ENDIF
+
+! == 2.3. Solution parameters
+
+*IF, P_ANALYSIS_TYPE, EQ, C_ANALYSIS_TYPE_MODAL, THEN
+	ANTYPE, MODAL
+	CORIOLIS, ON, , , ON
+	P_NBF = 6
+	MODOPT, QRDAMP, P_NBF, , , ON
+
+	! == 2.4. Solve
+
+	*DIM, P_MODAL_FREQ, ARRAY, P_NW, P_NBF
+	*DIM, P_MODAL_DAMP, ARRAY, P_NW, P_NBF
+
+	! loop for every speed
+	*DO, I, 1, P_NW
+		P_OMEGA = P_SPIN(I)*6.28/60
+		
+		/PREP7
+		! set the mass values according to the current rotating speed
+		*IF, P_FLAG_HAVE_SEAL, EQ, 1, THEN
+			R, P_MASS_REAL_SEAL(1), MXX_1(P_OMEGA)
+		*ENDIF
+
+		! solve the linear equation system
+		/SOLU
+		OMEGA, P_OMEGA
+		MXPAND, P_NBF
+		SOLVE
+
+		! store the result of the current rotating speed
+		*DO, J, 1, P_NBF
+			*GET, P_MODAL_FREQ(I,J), MODE, J, FREQ, IMAG
+			*GET, P_MODAL_DAMP(I,J), MODE, J, DAMP
+		*ENDDO
+	*ENDDO
+	FINI
+
+	! ======================== 3. Post process ===========================
+
+	/POST1
+	! *CFOPEN, ModalAnalysis_Loop, dat
+	*MWRITE, P_MODAL_FREQ(1,1), ModalAnalysis_Loop, dat, , JIK, P_NBF, P_NW, 1
+	%G %G %G %G
+
+	*MWRITE, P_MODAL_DAMP(1,1), MA_Damp_Loop, dat, , JIK, P_NBF, P_NW, 1
+	%G %G %G %G
+
+*ELSEIF, P_ANALYSIS_TYPE, EQ, C_ANALYSIS_TYPE_UNB_RES, THEN
+	
+	P_HARMIC_STEP = (P_HARMIC_F2-P_HARMIC_F1)/(P_NSUBSTEP)
+
+	*DIM, P_AMP, ARRAY, P_NSUBSTEP
+
+	*DO, I, 1, P_NSUBSTEP
+		/PREP7
+		P_MYOMEGA = (P_HARMIC_F1+(I-1)*P_HARMIC_STEP)*6.28
+
+		*IF, P_FLAG_HAVE_SEAL, EQ, 1, THEN
+			R, P_MASS_REAL_SEAL(1), MXX_1(P_MYOMEGA)
+		*ENDIF
+
+		/SOLU
+		/OUT, SCRATCH
+
+		! set the solution parameters
+		ANTYPE, HARMIC
+		! HROPT, FULL ! only full method is supported
+
+		CMOMEGA, PC_ROTOR, P_MYOMEGA
+
+		SYNCHRO, , PC_ROTOR ! NTOE: the first argument MUST be left blank
+		NSUBST, 1
+		HARFRQ, , P_MYOMEGA/6.28
+		KBC, 1
+
+		CORIOLIS, ON, , , ON
+
+		SOLVE
+
+		FINI
+
+		/POST26
+		NSOL, 2, P_UNBAL_NODE, U, Y, UY
+		NSOL, 3, P_UNBAL_NODE, U, Z, UZ
+		REALVAR, 4, 2, , , UYR
+		REALVAR, 5, 3, , , UZR
+		PROD, 6, 4, 4, , UYR_2
+		PROD, 7, 5, 5, , UZR_2
+		ADD, 8, 6, 7, , UYR_2+UZR_2
+		SQRT, 9, 8, , , AMPL12
+
+		VGET, P_AMP(I), 9,
+
+		FINI
+	*ENDDO
+
+	! ======================== Post process =====================
+
+	/POST26
+	*CFOPEN, HarmonicResponse_Loop, dat
+	*VWRITE, P_AMP(1)
+	%G
+*ENDIF
