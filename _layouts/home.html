@@ -20,7 +20,7 @@ layout: default
     site.data.common_data.myself.nation = <b>{{ site.data.common_data.myself.nation }}</b><br>
   </p> -->
 
-  <h1>Highlighted codes</h1>
+  <!-- <h1>Highlighted codes</h1>
   <p>Highlight a fragment of C++ code:<br></p>
 
   {% highlight c++ linenos %}
@@ -51,5 +51,20 @@ int main(void)
   </ul>
 
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+ -->
+
+<h1>Yaoyu Hu</h1>
+
+<img src="Resources/Me01.JPG" alt="My portrait image." style="width:250px">
+
+<p><b>Name:</b> Yaoyu Hu</p>
+
+<p><b>Birth:</b> {{ site.data.common_data.myself.birth_date }}</p>
+
+<p><b>Email:</b> {{ site.data.common_data.myself.email }}</p>
+
+<p><b>Address:</b> {{ site.data.common_data.myself.address }}, {{ site.data.common_data.myself.city }}, {{ site.data.common_data.myself.nation }}.</p>
+
+<p><b>ResearchGate:</b> <a href="{{ site.data.common_data.myself.researchgate_addr }}">Yaoyu_Hu</p>
 
 </div>
