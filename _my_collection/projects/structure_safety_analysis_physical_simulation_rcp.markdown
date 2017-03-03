@@ -31,7 +31,7 @@ In the simulation we had to calculate the deflection of both the pump rotor and 
 * Modal analysis of rotor and stator with MCS Nastran. Mode expansion.
 * Dynamic/Transient analysis with MCS Adams.
 
-In MCS Adams, the models of rotor and stator are imported as MCS Nastran results after mode expansion. The rotor and stator are both flexible and deformable. They may appear like the following figures. A dummy rigid body is inserted into the workspace to play as the supporting structure of the canned motor RCP. The earthquake movement is applied on this dummy rigid body. The stator is attached to the rigid body and shaking together with it. The rotor is connected to the stator by two journal bearings and one thrust bearing. A initial rotating speed is set up at the beginning of the transient simulation. The seismic movement takes place on the rigid body through out the simulation. 
+In MCS Adams, the models of rotor and stator are imported as MCS Nastran results after mode expansion. The rotor and stator are both flexible and deformable. They may appear like the following figures. A dummy rigid body is inserted into the workspace to play as the supporting structure of the canned motor RCP. The earthquake movement is applied on this dummy rigid body. The stator is attached to the rigid body and shaking together with it. The rotor is connected to the stator by two journal bearings and one thrust bearing. An initial rotating speed is set up at the beginning of the transient simulation. The seismic movement takes place on the rigid body through out the simulation. 
 
 <p><img src="{{site.baseurl}}/Resources/Projects/RCP_Adams/Adams_Rotor.png" alt="<img>Rotor model in Adams" width="400px"></p>
 

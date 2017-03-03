@@ -1,13 +1,13 @@
 ---
 layout: post
-title:  "Study of Physical Simulation Technology for the Canned Motor Pump in a Pressurized Water Nuclear Reactor System"
+title:  "Study of Physical Simulation Technology for a Pump Rotor"
 date:   2011-6-1 8:00:00 +0800
 categories: projects
 ---
 
 # Overview
 
-Let's be honest, this work was not a success.
+Let's be honest, this work was not excited as you may expect.
 
 At beginning, I was designated to develop a program that could some how perform simulation just like MCS Adams dose. 
 
