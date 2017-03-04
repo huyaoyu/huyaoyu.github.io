@@ -26,7 +26,11 @@ We were doing research aiming at these two kinds of RCPs. The tasks of this sub-
 
 # My tasks
 
-The tasks assigned to me are mostly about the rotordynamics of the RCPs, particularly the experimental study. A model pump was designed by myself and its rotordynamics was tested. I also developed a Maltab code to calculate the supporting effects of running clearances in pump and to solve the rotordynamics characteristics of the RCP.
+The tasks assigned to me are mostly about the rotordynamics of the RCPs, particularly the experimental study. A model pump was designed by myself and its rotordynamics was tested. I also developed a Matlab code to calculate the supporting effects of running clearances in a pump and to solve the rotordynamics characteristics of the RCP.
 
-The experimental work mainly focused on the vibration of the pump rotor. I measured the trajectory of the rotor, recorded the vibration level on the supporting structure and bearing housing. The model pump is actually based on a canned motor pump. Unlike a conventional canned motor pump which circulates its internal flow by an auxiliary impeller, the model pump had its internal flow propelled by external fluid source.
+The experimental work mainly focused on the vibration of the pump rotor. I measured the trajectory of the rotor, recorded the vibration level on the supporting structure and bearing housing. The model pump is actually designed based on a canned motor pump. Unlike a conventional canned motor pump which circulates its internal flow by an auxiliary impeller, the model pump had its internal flow propelled by an external fluid source. In this way, we could control the flow rate inside the clearances between the rotor and stator and study the influences of this internal flow on the rotordynamics of the pump.
+
+The rotor trajectory was measured by water proof eddy current displacement sensors. And the vibrating acceleration was tested by piezoelectic transducers. The above dynamic data were recorded by a data acquisition hardware of NI and were facilitated by a LabView code. The measured data were processed by a Matlab script.
+
+
 
