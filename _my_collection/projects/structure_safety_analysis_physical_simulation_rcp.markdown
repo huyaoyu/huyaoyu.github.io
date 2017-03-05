@@ -42,3 +42,5 @@ In MCS Adams, the models of rotor and stator are imported as MCS Nastran results
 The displacement of some pre-selected monitor points are sampled during the simulation. These points are arranged in pairs. For each pair of monitor points, one is on the rotor and the other is the nearest point on the stator. The distance between two points in a pair is calculated. A time history of such a distance could be drawn during the simulation process. A typical result could be shown in the following figure.
 
 <p><img src="{{site.baseurl}}/Resources/Projects/RCP_Adams/RunningDown_Cutted.png" alt="<img>Running down process"></p>
+
+It is a movie, and could be found at [here](https://www.youtube.com/watch?v=-u48lXk2-VM).
