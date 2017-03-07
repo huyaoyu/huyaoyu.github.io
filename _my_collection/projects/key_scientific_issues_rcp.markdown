@@ -34,9 +34,19 @@ The experimental work mainly focused on the vibration of the pump rotor. I measu
 
 The rotor trajectory was measured by water proof eddy current displacement sensors. And the vibrating acceleration was tested by piezoelectic transducers. The above dynamic data was recorded by a data acquisition hardware of NI and was facilitated by a LabView code. The measured data was processed by Matlab scripts to realize automatic analyzing.
 
-The following movies are the recorded rotor trajectories. The first is a stable rotor motion and the second is an unstable one.
+The following movies are the recorded rotor trajectories by LabView. The first is a stable rotor motion and the second is an unstable one.
 
+<p><a href="https://www.youtube.com/watch?v=QgoQFRDt7ms"><img src="{{site.baseurl}}/Resources/Projects/RCP/unstable_trajectory.jpg" alt="<img>Unstable trajectory"></a></p>
 
+(Click the image to link to the movie.)
+
+<p><a href="https://www.youtube.com/watch?v=1ld-iicw2x0"><img src="{{site.baseurl}}/Resources/Projects/RCP/stable_trajectory.jpg" alt="<img>Stable trajectory"></a></p>
+
+(Click the image to link to the movie.)
+
+For experiment configuration which produced stable rotor motion, the effects of internal flow on the vibration amplitude of the rotor was studied. The following figure shows the measured vibration amplitudes of the rotor under various internal flow rates and rotating speeds. This figure tells us that the vibration level rises as the axial flow becomes larger. The amplitudes rise and then fall with increasing rotating speed. The later phenomenon is the combination of the unbalanced excitation and the supporting of the internal running clearances inside the model pump. At first, when the rotating speed is relatively low, the supporting effect of the running clearances is weak. The vibration goes up with speed. After a certain speed point, the supporting effects of the running clearances come into play. Then the vibration is restricted after reaching a maximum point.
+
+<p><img src="{{site.baseurl}}/Resources/Projects/RCP/vibration-amplitude-under-various-internal-flow-rates-and-rotating-speeds.png" alt="<img>Canned motor RCP"></p>
 
 [\[1\] Shaft seal RCP](https://www.researchgate.net/figure/224624970_fig11_Figure-14-Cut-away-view-of-Westinghouse-93A-1-Reactor-Coolant-Pump-Source-and-ANSYS) 
 
