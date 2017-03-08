@@ -3,7 +3,7 @@ layout: post
 title:  "The new NI PXI gear is awesome!"
 date:   2017-03-04 18:00:00 +0800
 categories: gallery
-cover_image: "my_collection/gallery/sliding_mesh/SlidingMesh_clip.gif"
+cover_image: "my_collection/gallery/ni/NI-PXI-with-LabView.jpg"
 ---
 
 A new NI PXI platform is just arrived, and it is REALLY awesome. 
