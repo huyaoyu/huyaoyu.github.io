@@ -3,6 +3,7 @@ layout: post
 title:  "Rotordynamic analysis using ANSYS Mechanical APDL with the rotor modeled by beam element"
 date:   2017-01-02 12:00:00 +0800
 categories: technical
+cover_image: "Resources/Posts/RotorAPDL/SampleRotor_UnbalancedResponse_APDL.png"
 ---
 
 # Rotordynamic analysis using ANSYS Mechanical APDL with the rotor modeled by beam element

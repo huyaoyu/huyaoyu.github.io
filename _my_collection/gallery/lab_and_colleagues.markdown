@@ -3,6 +3,7 @@ layout: post
 title:  "The lab and colleagues"
 date:   2017-01-11 22:20:00 +0800
 categories: gallery
+cover_image: "my_collection/gallery/20170111_Bubble_HighSpeedCam_Ex.jpg"
 ---
 
 # Capture moving bubbles with high speed camera

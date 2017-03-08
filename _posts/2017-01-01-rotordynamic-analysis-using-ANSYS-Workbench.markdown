@@ -3,6 +3,7 @@ layout: post
 title:  "Rotordynamic analysis using ANSYS Workbench with solid finite element"
 date:   2017-01-03 12:00:00 +0800
 categories: technical
+cover_image: "Resources/Posts/SampleRotor_WB/GeometryAndSprings.png"
 ---
 
 # Rotordynamic analysis using ANSYS Workbench with solid finite element #

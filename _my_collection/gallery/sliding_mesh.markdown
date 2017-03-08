@@ -3,6 +3,7 @@ layout: post
 title:  "Transient simulation using rotating frame"
 date:   2017-01-20 12:00:00 +0800
 categories: gallery
+cover_image: "my_collection/gallery/sliding_mesh/SlidingMesh_clip.gif"
 ---
 
 * Rotating frame and pressure distribution &darr;

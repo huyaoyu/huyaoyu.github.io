@@ -1,0 +1,20 @@
+// My own sass.
+
+.list-item::after {
+  width: 100%;
+  margin: 10px 0 20px 0;
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.list-image {
+  float: left;
+  width: 20%;
+  margin: 10px 10px 10px 10px;
+}
+
+.list-content {
+  float: left;
+  width: 73%;
+}

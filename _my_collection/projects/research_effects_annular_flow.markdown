@@ -3,7 +3,7 @@ layout: post
 title:  "Research on the Effects of Annular Flow on the Stability of the Rotordynamic System in a Canned Motor RCP"
 date:   2016-1-1 8:00:00 +0800
 categories: projects
-cover_image: "{{site.baseurl}}/Resources/Projects/AnnularFlow/geometry-and-coordinate-transformation.png"
+cover_image: "Resources/Projects/AnnularFlow/geometry-and-coordinate-transformation.png"
 ---
 
 It is a government funded research project. The subject is the annular flow in a canned motor reactor coolant pump (RCP). Half of the content is the basis of my own Ph.D. thesis. The extent of this project includes:

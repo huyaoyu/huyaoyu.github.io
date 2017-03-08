@@ -3,6 +3,7 @@ layout: post
 title:  "Experiments for fluid induced forces of clearance flow"
 date:   2016-08-01 12:00:00 +0800
 categories: gallery
+cover_image: "my_collection/gallery/clearance_flow_exp/IMG_4023_test_rig_and_myself.JPG"
 ---
 
 * The clearance flow test rig and myself &darr;

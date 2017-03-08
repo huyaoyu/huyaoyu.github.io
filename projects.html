@@ -10,13 +10,18 @@ nav_order: 2
 <ul class="post-list">
 	{% for article in site.my_collection %}
 		{% if article.categories contains "projects" %}
-		  <li>
-		    <span class="post-meta">{{ article.date | date: "%b %-d, %Y" }}</span>
+			<div class="list-item">
+				<div class = "list-image"><img src="{{site.baseurl}}/{{ article.cover_image }}" alt="Cover image" /> </div>
+				<div class = "list-content">
+				  <li>
+				    <span class="post-meta">{{ article.date | date: "%b %-d, %Y" }}</span>
 
-		    <h2>
-		      <a class="post-link" href="{{ article.url | relative_url }}">{{ article.title | escape }}</a>
-		    </h2>
-		  </li>
+				    <h2>
+				      <a class="post-link" href="{{ article.url | relative_url }}">{{ article.title | escape }}</a>
+				    </h2>
+				  </li>
+				</div>
+			</div>
 		{% endif %}
 	{% endfor %}
 </ul>

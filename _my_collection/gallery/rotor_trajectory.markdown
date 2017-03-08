@@ -3,6 +3,7 @@ layout: post
 title:  "Trajectory of a rotor with processional or whirl motion"
 date:   2016-08-20 12:00:00 +0800
 categories: gallery
+cover_image: "my_collection/gallery/rotor_trajectory/rotor_trajectory.png"
 ---
 
 * Rotation with processional or whirl motion &darr;

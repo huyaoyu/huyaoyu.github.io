@@ -3,6 +3,7 @@ layout: post
 title:  "Structure Safety Analysis of a Canned Motor Reactor Coolant Pump"
 date:   2011-11-14 8:00:00 +0800
 categories: projects
+cover_image: "Resources/Projects/RCP_Adams/RunningDown_Cutted.png"
 ---
 
 # Overview

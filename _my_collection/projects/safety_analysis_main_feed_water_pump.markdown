@@ -3,6 +3,7 @@ layout: post
 title:  "Safety Analysis of a Main Feedwater Pump in the Secondary Loop of a Nuclear Power Plant"
 date:   2015-3-1 8:00:00 +0800
 categories: projects
+cover_image: "Resources/Projects/FeedwaterPump/feedwater-pump.jpg"
 ---
 
 # Overview

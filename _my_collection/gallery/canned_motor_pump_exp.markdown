@@ -3,6 +3,7 @@ layout: post
 title:  "Experiments for canned motor pump"
 date:   2013-05-01 12:00:00 +0800
 categories: gallery
+cover_image: "my_collection/gallery/canned_motor_pump_exp/IMG_2511_rotor_balancing.JPG"
 ---
 
 * My colleague was calibrating the differential pressure transducer &darr;
