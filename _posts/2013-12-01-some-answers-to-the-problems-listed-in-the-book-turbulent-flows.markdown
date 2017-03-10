@@ -22,4 +22,6 @@ The followings are some solutions that I wrote down when I was reading the book 
 
 	<embed src="{{site.baseurl}}/Resources/solution-to-pope/SolutionEx.7.17(1).pdf" width="800px" height="400px">
 
+* Ex.13.1 &darr;. Download the [PDF file]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.1.pdf).
 
+	<embed src="{{site.baseurl}}/Resources/Posts/Pope/Ex.13.1.pdf" width="800px" height="400px">
