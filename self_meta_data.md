@@ -23,7 +23,7 @@ nav_order: 1
 
 *   Shanghai Jiao Tong University
 
-	Nuclear science & engineering, Ph.D., expected at 2017.3
+	Nuclear science & engineering, Ph.D., 2017.3
 
 *	East China University of Science & Technology
 
@@ -44,3 +44,11 @@ nav_order: 1
 * **Analysis of hydrodynamic lubricated bearings:** Programming, 2D Reynolds Eqs., 3D Thermo-Elasto-Hydro-Dynamics analysis
 
 * **Frequently used tools:** Eclipse(Linux), Visual Studio, MATLAB, Emacs/Vim(Linux), MySQL(Linux), Sublime Text, git, cmake, gdb, valgrind, ANSYS(APDL, FLUENT, CFX, ICEM, Workbench), Autodesk AutoCAD, Autodesk Inventor, Solidworks, UG NX, LabView, Microsoft Office (Word, Power Point, Excel, Access, Viso), Latex
+
+# Research Interests #
+
+* **CFD program development**
+* **High performance computing**
+* **LES, hybrid LES/RANS**
+* **Fluid structure interaction**
+* **Rotordynamics of turbomachinery**

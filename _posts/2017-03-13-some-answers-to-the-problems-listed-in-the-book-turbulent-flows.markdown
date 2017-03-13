@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Some solutions to the exercises listed in the book 'Turbulent flows' of Stephen B. Pope"
-date:   2013-10-31 12:00:00 +0800
+date:   2017-03-13 12:00:00 +0800
 categories: technical
 cover_image: "Resources/Posts/Pope/turbulent-flows-cover.jpg"
 ---
