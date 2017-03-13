@@ -25,3 +25,10 @@ The followings are some solutions that I wrote down when I was reading the book 
 * Ex.13.1 &darr;. Download the [PDF file]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.1.pdf).
 
 	<embed src="{{site.baseurl}}/Resources/Posts/Pope/Ex.13.1.pdf" width="800px" height="400px">
+
+* [Ex.13.2]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.2.pdf)
+* [Ex.13.3]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.3.pdf)
+* [Ex.13.4]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.4.pdf)
+* [Ex.13.5]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.5.pdf)
+* [Ex.13.6]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.6.pdf)
+* [Ex.13.7]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.7.pdf)
