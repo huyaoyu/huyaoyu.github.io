@@ -32,3 +32,6 @@ The followings are some solutions that I wrote down when I was reading the book 
 * [Ex.13.5]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.5.pdf)
 * [Ex.13.6]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.6.pdf)
 * [Ex.13.7]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.7.pdf)
+* [Ex.13.8]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.8.pdf)
+* [Ex.13.9]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.9.pdf)
+* [Ex.13.10]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.10.pdf)
