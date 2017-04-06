@@ -21,6 +21,12 @@ The followings are some solutions that I wrote down when I was reading the book 
 * [Ex.6.21]({{site.baseurl}}/Resources/Posts/Pope/Ex.6.21.pdf)
 * [Ex.6.22]({{site.baseurl}}/Resources/Posts/Pope/Ex.6.22.pdf)
 * [Ex.6.23 (May not be correct)]({{site.baseurl}}/Resources/Posts/Pope/Ex.6.23.pdf)
+* [Ex.6.24]({{site.baseurl}}/Resources/Posts/Pope/Ex.6.24.pdf)
+* [Ex.6.25]({{site.baseurl}}/Resources/Posts/Pope/Ex.6.25.pdf)
+<!-- * [Ex.6.26]({{site.baseurl}}/Resources/Posts/Pope/Ex.6.26.pdf) -->
+* [Ex.6.27]({{site.baseurl}}/Resources/Posts/Pope/Ex.6.27.pdf)
+* [Ex.6.28]({{site.baseurl}}/Resources/Posts/Pope/Ex.6.28.pdf)
+* [Ex.6.29]({{site.baseurl}}/Resources/Posts/Pope/Ex.6.29.pdf)
 
 * Ex.7.11 &darr;. Download the [PDF file]({{site.baseurl}}/Resources/solution-to-pope/SolutionEx.7.11.pdf).
 
