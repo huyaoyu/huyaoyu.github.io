@@ -45,3 +45,6 @@ The followings are some solutions that I wrote down when I was reading the book 
 * [Ex.13.8]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.8.pdf)
 * [Ex.13.9]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.9.pdf)
 * [Ex.13.10]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.10.pdf)
+* [Ex.13.11]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.11.pdf)
+* [Ex.13.12]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.12.pdf)
+* [Ex.13.14]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.14.pdf)
