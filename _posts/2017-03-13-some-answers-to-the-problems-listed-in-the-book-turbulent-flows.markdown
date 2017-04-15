@@ -48,3 +48,8 @@ The followings are some solutions that I wrote down when I was reading the book 
 * [Ex.13.11]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.11.pdf)
 * [Ex.13.12]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.12.pdf)
 * [Ex.13.14]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.14.pdf)
+* [Ex.13.17]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.17.pdf)
+* [Ex.13.18]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.18.pdf)
+* [Ex.13.19]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.19.pdf)
+* [Ex.13.20]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.20.pdf)
+* [Ex.13.21]({{site.baseurl}}/Resources/Posts/Pope/Ex.13.21.pdf)
