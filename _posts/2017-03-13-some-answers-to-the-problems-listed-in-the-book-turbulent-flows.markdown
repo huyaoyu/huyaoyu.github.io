@@ -10,6 +10,7 @@ The followings are some solutions that I wrote down when I was reading the book 
 
 (The cover image of this blog is from this [website](https://www.weltbild.de/artikel/buch/turbulent-flows_14518085-1))
 
+* Comments on Eq. (6.25): Refer to the work by H.P. Robertson (1940), *The Invariant Theory of Isotropic Turbulence*.
 * [Ex.6.12]({{site.baseurl}}/Resources/Posts/Pope/Ex.6.12.pdf)
 * [Ex.6.13]({{site.baseurl}}/Resources/Posts/Pope/Ex.6.13.pdf)
 * [Ex.6.14]({{site.baseurl}}/Resources/Posts/Pope/Ex.6.14.pdf)
