@@ -3,7 +3,7 @@ layout: post
 title:  "The robots with me"
 date:   2015-12-1 12:00:00 +0800
 categories: gallery
-cover_image: "my_collection/gallery/20170111_Bubble_HighSpeedCam_Ex.jpg"
+cover_image: "my_collection/gallery/the-robot-with-me/NAO1.jpg"
 ---
 
 # RoboCup
