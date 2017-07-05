@@ -1,0 +1,51 @@
+$ mpiexec --np 4 ./VecSG 
+
+Show the content of each processor.
+
+Rank 2: idx = 0, value = 200.000000.
+Rank 3: idx = 0, value = 300.000000.
+Rank 3: idx = 1, value = 301.000000.
+Rank 3: idx = 2, value = 302.000000.
+Rank 3: idx = 3, value = 303.000000.
+Rank 0: idx = 0, value = 0.000000.
+Rank 0: idx = 1, value = 1.000000.
+Rank 0: idx = 2, value = 2.000000.
+Rank 0: idx = 3, value = 3.000000.
+Rank 1: idx = 0, value = 100.000000.
+Rank 1: idx = 1, value = 101.000000.
+Rank 1: idx = 2, value = 102.000000.
+Rank 1: idx = 3, value = 103.000000.
+Rank 2: idx = 1, value = 201.000000.
+Rank 2: idx = 2, value = 202.000000.
+Rank 2: idx = 3, value = 203.000000.
+
+Vector scattering, forward.
+
+Rank 2: localVec[0] = 1.000000.
+Rank 2: localVec[1] = 302.000000.
+Rank 3: localVec[0] = 1.000000.
+Rank 3: localVec[1] = 302.000000.
+Rank 1: localVec[0] = 1.000000.
+Rank 1: localVec[1] = 302.000000.
+Rank 0: localVec[0] = 1.000000.
+Rank 0: localVec[1] = 302.000000.
+
+Vector scattering, reverse.
+
+Rank 1: idx = 0, value = 100.000000.
+Rank 3: idx = 0, value = 300.000000.
+Rank 3: idx = 1, value = 301.000000.
+Rank 0: idx = 0, value = 0.000000.
+Rank 0: idx = 1, value = -1.000000.
+Rank 3: idx = 2, value = -2.000000.
+Rank 3: idx = 3, value = 303.000000.
+Rank 1: idx = 1, value = 101.000000.
+Rank 0: idx = 2, value = 2.000000.
+Rank 0: idx = 3, value = 3.000000.
+Rank 1: idx = 2, value = 102.000000.
+Rank 1: idx = 3, value = 103.000000.
+Rank 2: idx = 0, value = 200.000000.
+Rank 2: idx = 1, value = 201.000000.
+Rank 2: idx = 2, value = 202.000000.
+Rank 2: idx = 3, value = 203.000000.
+
