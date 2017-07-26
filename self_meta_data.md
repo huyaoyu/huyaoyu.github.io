@@ -19,6 +19,8 @@ nav_order: 1
 
 **ResearchGate:** [Yaoyu_Hu][rg_addr]
 
+**Download the CV** [here]({{site.baseurl}}/Resources/CV/YaoyuHu_CV_20170726.pdf).
+
 # Education #
 
 *   Shanghai Jiao Tong University
