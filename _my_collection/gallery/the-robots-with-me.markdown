@@ -29,3 +29,9 @@ In this project, I was assigned to develop the software for all the low level ha
 This little robot has two laser sensors and it could build the map of its surrounding environment and figure out where it is located. It has a camera and can perform real time face tracking.
 
 But the most important feature is that it has a cute face with blinking eyes :)
+
+# AR.Drone
+
+<p><img src="{{site.baseurl}}/my_collection/gallery/the-robot-with-me/ARDroneAndMe.jpg" alt="<img>NAO football game." width="300"></p>
+
+This quadrotor drone had amazing capabilities back to those days when quadrotors were not as popular as they are today. The most important feature of AR.Drone is that it was shipped with a set of SDK that let the user to get access to the hardware and develop applications.

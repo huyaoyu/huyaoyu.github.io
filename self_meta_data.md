@@ -19,7 +19,7 @@ nav_order: 1
 
 **ResearchGate:** [Yaoyu_Hu][rg_addr]
 
-**Download the CV** [here]({{site.baseurl}}/Resources/CV/YaoyuHu_CV_20170726.pdf).
+**Download the CV** [here]({{site.baseurl}}/Resources/CV/YaoyuHu-CV-20170806.pdf).
 
 # Education #
 
@@ -37,7 +37,7 @@ nav_order: 1
 
 * **CFD:** Programming, 3D unstructured grids with turbulent model, parallel computing, FLUENT (UDF), CFX
 
-* **FEM:** Programming, ANSYS
+* **FEM:** Programming, ANSYS products, COMSOL, MCS products.
 
 * **Programming:** C/C++, MATLAB, Python, Linux programming, (shell scripting & multi-threading)
 
@@ -45,12 +45,15 @@ nav_order: 1
 
 * **Analysis of hydrodynamic lubricated bearings:** Programming, 2D Reynolds Eqs., 3D Thermo-Elasto-Hydro-Dynamics analysis
 
+* **Experiments:** Fluid visualization (PIV & high speed photography). Vibration measurement.
+
 * **Frequently used tools:** Eclipse(Linux), Visual Studio, MATLAB, Emacs/Vim(Linux), MySQL(Linux), Sublime Text, git, cmake, gdb, valgrind, ANSYS(APDL, FLUENT, CFX, ICEM, Workbench), Autodesk AutoCAD, Autodesk Inventor, Solidworks, UG NX, LabView, Microsoft Office (Word, Power Point, Excel, Access, Viso), Latex
 
 # Research Interests #
 
-* **CFD program development**
-* **High performance computing**
-* **LES, hybrid LES/RANS**
-* **Fluid structure interaction**
-* **Rotordynamics of turbomachinery**
+* **CFD & FEM program development. LES, hybrid LES/RANS.**
+* **Simulation and numerical analysis of robotic systems and environment. Micro/Nano-robotics. Lab on a chip systems.**
+* **High performance computing.**
+* **Numerical optimization.**
+* **Fluid structure interaction.**
+* **Rotordynamics of turbomachinery.**
