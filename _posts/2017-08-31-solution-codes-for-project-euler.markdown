@@ -8,6 +8,19 @@ cover_image: "Resources/Posts/ProjectEuler/euler_portrait.png"
 
 I created a new [repo][web_repo] on GitHub to share my solution codes for the problems of [Project Euler][web_pe]. I find it is really interesting.
 
+# Comments on the problems.
+
+* 001
+* 002
+* 003
+
+A function is created to test whether a positive integer is a prime number.
+
+* 004
+* 005
+
+Codes are developed to calculate the least common multiple of a group of numbers.
+
 # NOTE:
 
 The cover image is obtained from the home page of [Project Euler][web_pe].
