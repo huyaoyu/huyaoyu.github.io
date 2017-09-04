@@ -21,6 +21,14 @@ A function is created to test whether a positive integer is a prime number.
 
 Codes are developed to calculate the least common multiple of a group of numbers.
 
+* 006
+
+There are some interesting facts about the sum of the sequence of n^2. And it turns out that 
+
+(1 + 2 + ... + n)^2 = 1^3 + 2^3 + ... + n^3. 
+
+Amazing!
+
 # NOTE:
 
 The cover image is obtained from the home page of [Project Euler][web_pe].
