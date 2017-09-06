@@ -29,6 +29,14 @@ There are some interesting facts about the sum of the sequence of n^2. And it tu
 
 Amazing!
 
+* 007
+
+It turns out that in the Python environment if you check the current number to see whether it is a prime number by referring to the prime numbers already found and stored in a list, the overall performance is not as good as expected.
+
+* 008
+
+No magical things happened.
+
 # NOTE:
 
 The cover image is obtained from the home page of [Project Euler][web_pe].
