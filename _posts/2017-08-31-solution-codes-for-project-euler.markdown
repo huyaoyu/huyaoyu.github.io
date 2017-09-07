@@ -37,6 +37,10 @@ It turns out that in the Python environment if you check the current number to s
 
 No magical things happened.
 
+* 009
+
+There is a genius solution in the discussion thread of Project Euler.
+
 # NOTE:
 
 The cover image is obtained from the home page of [Project Euler][web_pe].
