@@ -41,6 +41,14 @@ No magical things happened.
 
 There is a genius solution in the discussion thread of Project Euler.
 
+* 010
+
+No magical things happened.
+
+* 011
+
+The `diagonal()` and `fliplr()` functions are utilized in my python code. Remember to handle the opposite diagonals.
+
 # NOTE:
 
 The cover image is obtained from the home page of [Project Euler][web_pe].
