@@ -49,6 +49,10 @@ No magical things happened.
 
 The `diagonal()` and `fliplr()` functions are utilized in my python code. Remember to handle the opposite diagonals.
 
+* 012
+
+Using the prime factorization is the key.
+
 # NOTE:
 
 The cover image is obtained from the home page of [Project Euler][web_pe].
