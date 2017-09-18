@@ -37,7 +37,7 @@ Wang Y, Wang D, **Hu Y**. Vibration Analysis of Coolant Pump With Two Unbalanced
 
 # In progress
 
-**Hu Y**, Wang D, Yin J, Xu R. Numerical Modeling of the Fluid Induced Forces of Clearance Flow in Canned Motor Reactor Coolant Pump. Submitted to *Annals of Nuclear Energy* at June 18th, 2017. under review.
+**Hu Y**, Wang D, Yin J, Xu R. Numerical Modeling of the Fluid Induced Forces of Clearance Flow in Canned Motor Reactor Coolant Pump. Submitted to *Annals of Nuclear Energy* on June 18th, 2017.
 
-**Hu Y**, Wang D, Xu R, Yin J. Investigation of the Fluid Induced Forces of Vertical Annular Clearance with Large Aspect Ratio. In preparation for *Journal of Fluids Engineering*. Manuscript will be ready before September 2017.
+**Hu Y**, Xu R, Wang D, Yin J. Investigation of the Fluid Induced Forces of Vertical Annular Clearance with Large Aspect Ratio. Submitted to *Journal of Fluids Engineering*. on Sep. 11th, 2017.
 
