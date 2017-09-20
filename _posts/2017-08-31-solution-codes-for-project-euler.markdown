@@ -59,7 +59,7 @@ In fact, only the first 11 or 12 digits of each number are needed if only the fi
 
 Some people say that, in LISP, amazing things happens when solve this problem with only one "+" operator.
 
-And it turns out that, for 10 digits precision one could use `double` typed values instead of integers. Because for today's PC, the `double` value have 16 significant digits.
+And it turns out that, for 10 digits precision one could use `double` typed values instead of integers. Because for today's PC, the `double` value has 16 significant digits.
 
 # NOTE:
 
