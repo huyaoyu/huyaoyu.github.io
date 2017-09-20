@@ -63,7 +63,7 @@ And it turns out that, for 10 digits precision one could use `double` typed valu
 
 * 014
 
-The method utilize the Hash table is much faster than the naive implementation.
+The method which utilizes the Hash table is much faster than the naive implementation.
 
 # NOTE:
 
