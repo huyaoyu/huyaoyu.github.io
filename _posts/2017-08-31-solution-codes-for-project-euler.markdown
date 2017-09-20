@@ -53,6 +53,12 @@ The `diagonal()` and `fliplr()` functions are utilized in my python code. Rememb
 
 Using the prime factorization is the key.
 
+* 013
+
+In fact, only the first 11 or 12 digits of each number are needed if only the first 10 digits of the final answer are required.
+
+Some people say that, in LISP, amazing things happens when solve this problem with only one "+" operator.
+
 # NOTE:
 
 The cover image is obtained from the home page of [Project Euler][web_pe].
