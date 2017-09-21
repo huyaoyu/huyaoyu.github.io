@@ -65,6 +65,10 @@ And it turns out that, for 10 digits precision one could use `double` typed valu
 
 The method which utilizes the Hash table is much faster than the naive implementation.
 
+* 015
+
+The theoretical solution is based on the knowledge of Pascal's triangle and the theory of permutation and combination. I did not quite get the idea of the theoretical solution. However, one guy named RudyPenteado gave an illustrative interpretation using binary codes.
+
 # NOTE:
 
 The cover image is obtained from the home page of [Project Euler][web_pe].
