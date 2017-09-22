@@ -69,6 +69,24 @@ The method which utilizes the Hash table is much faster than the naive implement
 
 The theoretical solution is based on the knowledge of Pascal's triangle and the theory of permutation and combination. I did not quite get the idea of the theoretical solution. However, one guy named RudyPenteado gave an illustrative interpretation using binary codes.
 
+* 016
+
+Today's dynamic or scripting programming language is so powerful that there is virtually no upper limit for integer.
+
+However, I composed another piece of code. This code deliberately does not use the big integer functionality of Python. The long_integer class created in PEID 013 is borrowed. Since PEID 016 only require multiplication by 2, only the addition operation is needed.
+
+* 017
+
+I have to admit that this problem is not about mathematics and programming. It is all about the different usages of the word "and" between British English and  American English. Furthermore, make sure to spell-check your words, like "forty".
+
+* 018
+
+The code also works for PEID 067.
+
+The key is to search from the bottom to the top.
+
+I build a binary tree to do the recursive search. A flag should be  set to indicate whether the current node has found a maximum sum.
+
 # NOTE:
 
 The cover image is obtained from the home page of [Project Euler][web_pe].
