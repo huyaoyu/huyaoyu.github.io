@@ -85,7 +85,7 @@ The code also works for PEID 067.
 
 The key is to search from the bottom to the top.
 
-I build a binary tree to do the recursive search. A flag should be  set to indicate whether the current node has found a maximum sum.
+I build a binary tree to do the recursive search. A flag should be set to indicate whether the current node has found a maximum sum.
 
 # NOTE:
 
