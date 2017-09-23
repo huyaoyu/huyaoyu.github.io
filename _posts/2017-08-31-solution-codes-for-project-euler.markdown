@@ -87,6 +87,14 @@ The key is to search from the bottom to the top.
 
 I build a binary tree to do the recursive search. A flag should be set to indicate whether the current node has found a maximum sum.
 
+* 019
+
+Python provides a package with the name of `datetime`. This package should do the trick.  
+
+But I decided to do it by myself. 
+
+And it turns out that 1200/7 is a fairly accurate approximation of this problem. Brilliant!
+
 # NOTE:
 
 The cover image is obtained from the home page of [Project Euler][web_pe].
