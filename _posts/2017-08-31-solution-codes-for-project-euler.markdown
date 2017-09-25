@@ -95,9 +95,17 @@ But I decided to do it by myself.
 
 And it turns out that 1200/7 is a fairly accurate approximation of this problem. Brilliant!
 
-020
+* 020
 
 Everybody seems to rely on some sort of big-number library.
+
+* 021
+
+It is best to search below sqrt(n) when trying to calculate all the proper divisors of an integer n.
+
+Make sure to check the following two situations:
+(1) The two numbers in a pair are identical. And,
+(2) Whether [a, b] and [b, a] are treated as different pairs.
 
 # NOTE:
 
