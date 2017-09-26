@@ -107,6 +107,14 @@ Make sure to check the following two situations:
 (1) The two numbers in a pair are identical. And,
 (2) Whether [a, b] and [b, a] are treated as different pairs.
 
+* 022
+
+First of all, the knowledge of ASCII codes is a plus. (ord() and chr() functions)
+
+Benefit from list.sort() function of Python.
+
+Then no magical things happened.
+
 # NOTE:
 
 The cover image is obtained from the home page of [Project Euler][web_pe].
