@@ -115,6 +115,10 @@ Benefit from list.sort() function of Python.
 
 Then no magical things happened.
 
+* 023
+
+Not as fast as those posted on the discussion thread of Project Euler.
+
 # NOTE:
 
 The cover image is obtained from the home page of [Project Euler][web_pe].
