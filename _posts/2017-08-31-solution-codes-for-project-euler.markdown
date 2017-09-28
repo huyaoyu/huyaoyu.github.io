@@ -119,6 +119,10 @@ Then no magical things happened.
 
 Not as fast as those posted on the discussion thread of Project Euler.
 
+* 024
+
+You can rely on the powerful `itertools` package provided by python. However, I choose another way out.
+
 # NOTE:
 
 The cover image is obtained from the home page of [Project Euler][web_pe].
