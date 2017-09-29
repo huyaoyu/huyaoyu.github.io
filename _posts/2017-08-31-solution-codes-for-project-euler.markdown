@@ -123,6 +123,10 @@ Not as fast as those posted on the discussion thread of Project Euler.
 
 You can rely on the powerful `itertools` package provided by python. However, I choose another way out.
 
+* 025
+
+No brute force this time. Inspired by Problem 013.
+
 # NOTE:
 
 The cover image is obtained from the home page of [Project Euler][web_pe].
