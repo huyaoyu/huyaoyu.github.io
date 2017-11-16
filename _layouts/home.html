@@ -75,4 +75,33 @@ int main(void)
 <p>CSDN Blog: <a href="http://my.csdn.net/huyaoyu" target="_blank">my.csdn.net</a></p>
 <p>Weibo: <a href="http://weibo.com/u/1627254052" target="_blank">weibo.com/u/1627254052</a></p>
 
+<!-- <div class="post-list">
+  {% for my_page in site.pages %}
+    {% if my_page.title %}
+    <li>{{ my_page.url }}</li>
+    {% endif %}
+  {% endfor %}
+</div> -->
+
+<h1>Recent blog posts</h1>
+
+<h2>Go to the <a href="{{ '/blog.html' | relative_url }}">Blog page.</a><h2>
+
+<ul class="post-list">
+    {% for post in site.posts limit:3 %}
+    <div class="list-item">
+      <div class = "list-image"><img src="{{site.baseurl}}/{{ post.cover_image }}" alt="Cover image" /> </div>
+      <div class = "list-content">
+      <li>
+      <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+      <h2>
+        <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      </h2>
+      </li>
+    </div>
+  </div>
+    {% endfor %}
+ </ul>
+
 </div>
