@@ -19,6 +19,8 @@ This is the page of HU Yaoyu's publications.
         
 **Hu Y Y**, Lin Y X, Wang D Z, Miu F M, Yin J L. Numerical Study on the Resistance Characteristics and Rotordynamic Coefficients of a Helically Grooved Annular Seal. *The 7th International Conference on Pumps and Fans, Hangzhou, China October 18-21, 2015*. [PDF]({{site.baseurl}}/Resources/PDFPublications/ICPF-052_Numerical Study on the Resistance Characteristics and Rotordynamic Coefficients of a Helically Grooved Annular Seal.pdf)
 
+**Hu Y Y**, Xu R, Wang D Z, Yin J L, Long Y. Investigation of the Fluid Induced Forces of Clearance Flow in Canned Motor Reactor Coolant Pump. *The 14th Asian International Conference on Fluid Machinery, Zhenjiang, China November 10-13, 2017*. [PDF]({{site.baseurl}}/Resources/PDFPublications/AICFM14_Investigation of the Fluid Induced Forces of Clearance Flow in Canned Motor Reactor Coolant Pump.pdf)
+
 # Coauthor
 
 Long Y, Wang D, Yin J, **Hu Y**, Ran H. Numerical investigation on the unsteady characteristics of reactor coolant pumps with non-uniform inflow. *Nuclear Engineering and Design*, 2017, 320: 65-76. (**Role:** Data processing, manuscript preparation) [PDF]({{site.baseurl}}/Resources/PDFPublications/2017_Numerical investigation on the unsteady characteristics of reactor coolant pumps with non-uniform inflow.pdf)
