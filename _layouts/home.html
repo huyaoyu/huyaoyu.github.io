@@ -88,7 +88,7 @@ int main(void)
 <h2>Read more on the <a href="{{ '/blog.html' | relative_url }}">Blog page.</a><h2>
 
 <ul class="post-list">
-    {% for post in site.posts limit:3 %}
+    {% for post in site.posts limit:5 %}
     <div class="list-item">
       <div class = "list-image"><img src="{{site.baseurl}}/{{ post.cover_image }}" alt="Cover image" /> </div>
       <div class = "list-content">
