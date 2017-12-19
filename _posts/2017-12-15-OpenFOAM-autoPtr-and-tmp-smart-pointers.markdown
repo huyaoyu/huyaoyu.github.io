@@ -48,7 +48,7 @@ Info << "reference count = " << t1->count() << endl;
 
 I was totally confused when I was studying the source code of `tmp`. Then I found a good explanation on [OpenFOAM Wiki][OpenFOAMWikiWebsite]. `tmp` is designed for handling a large amount of memory between function calls. That is, you could use `tmp` to pass objects to a function as an argument, or get the return value from a function, with the object holding a large amount of memory. During the above operation, no significant memory copy occurs. And you do not need more than two references to a raw C++ pointer when invoking a function or returning from a function.
 
-[OpenFOAMWikiWebsite]: OpenFOAMWikiWebsite
+[OpenFOAMWikiWebsite]: http://openfoamwiki.net/index.php/OpenFOAM_guide/tmp
 
 [OpenFOAM Wiki][OpenFOAMWikiWebsite] lists a sample code to illustrate the usage of `tmp`. I just copy it here.
 
