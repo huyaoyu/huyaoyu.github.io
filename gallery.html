@@ -6,9 +6,11 @@ nav_order: 4
 ---
 
 <!-- <h1 class="page-heading">Gallery</h1> -->
-  
+
+{% assign sorted_collection = (site.my_collection | sort: 'date') | reverse %}
+
 <ul class="post-list">
-	{% for article in site.my_collection %}
+	{% for article in sorted_collection %}
 		{% if article.categories contains "gallery" %}
 		<div class="list-item">
 			<div class = "list-image"><img src="{{site.baseurl}}/{{ article.cover_image }}" alt="Cover image" /> </div>
