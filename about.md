@@ -13,6 +13,6 @@ Google Scholar: <a href="https://scholar.google.com/citations?user=qIs5g7MAAAAJ"
 
 # For visitors from China or Chinese friends: #
 
-CSDN Blog: <a href="http://blog.csdn.net/huyaoyu" target="_blank">blog.csdn.net</a>
+CSDN Blog: <a href="http://blog.csdn.net/huyaoyu" target="_blank">blog.csdn.net/huyaoyu</a>
 
 Weibo: <a href="http://weibo.com/u/1627254052" target="_blank">weibo.com/u/1627254052</a>
