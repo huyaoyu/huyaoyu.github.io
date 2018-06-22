@@ -9,6 +9,8 @@ nav_order: 1
 
 <img src="Resources/Me01.JPG" alt="My portrait image." style="width:250px">
 
+<h1><font color="blue">Finding my way from nuclear engineering to robotics! Things will change during the transition!</font></h1>
+
 **Name:** Yaoyu Hu
 
 **Birth:** {{ site.data.common_data.myself.birth_date }}
@@ -19,7 +21,19 @@ nav_order: 1
 
 **ResearchGate:** [Yaoyu_Hu][rg_addr]
 
-**Download the CV** [here]({{site.baseurl}}/Resources/CV/YaoyuHu-CV-20170806.pdf).
+**Download the (old) CV** [here]({{site.baseurl}}/Resources/CV/YaoyuHu-CV-20170806.pdf).
+
+# Work Experiences #
+
+*	Carnegie Mellon University
+	
+	Airlab, Field Robotics Center, Robotics Institute.
+	Visiting Scholar, 2018.4 - Now.
+
+*	Shanghai Jiao Tong University
+
+	School of Mechanical Engineering. 
+	Post-doc, 2017.10 - 2018.4.
 
 # Education #
 

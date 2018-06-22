@@ -1,13 +1,16 @@
 {
 	"myself" : 
-	{ "university" : "Shanghai Jiao Tong University",
-	  "department" : "School of Mechanical Enginerring",
+	{ "university" : "Ph.D. at Shanghai Jiao Tong University",
+	  "department" : "Ph.D. at School of Mechanical Enginerring",
 	  "major" : "Nuclear Science and Enginerring",
 	  "birth_date" : "1986.02",
 	  "mobile_number" : "+86 135 6448 6941",
-	  "email" : "huyaoyu@sjtu.edu.cn",
-	  "address" : "Room 320, Building A, School of Mechanical Enginerring, Shanghai Jiao Tong University, No. 800, Dongchuan Rd.",
-	  "city" : "Shanghai",
-	  "nation" : "China",
-	  "researchgate_addr" : "https://www.researchgate.net/profile/Yaoyu_Hu" }
+	  "email" : "yaoyuh@andrew.cmu.edu",
+	  "working_place":"Carnegie Mellon University",
+	  "working_department":"Field Robotics Center, Robotics Institution",
+	  "address" : "Room 2104, Newell-Simon Hall, Robotics Institution, Carnegie Mellon University, No. 500, Forbes Ave.",
+	  "city" : "Pittsburgh, PA",
+	  "nation" : "United States",
+	  "researchgate_addr" : "https://www.researchgate.net/profile/Yaoyu_Hu" 
+	}
 }
