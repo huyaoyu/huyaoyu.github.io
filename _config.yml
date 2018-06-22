@@ -25,6 +25,7 @@ github_username:  huyaoyu
 
 # Build settings
 markdown: kramdown
+# markdown: redcarpet
 theme: minima
 # theme: jekyll-theme-leap-day
 plugins:
