@@ -26,11 +26,11 @@ The angle bracket &lt; and ampersand &amp; characters need to be escaped.
 Or it seems that they could by converted automatically. & <
 
 
-#Header 1#
+# Header 1 #
 
-##Header 2##
+## Header 2 ##
 
-###Header 3###
+### Header 3 ###
 
 Try out list.
 
