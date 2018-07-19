@@ -138,7 +138,7 @@ Table 3 Sample .mlp file. &darr;
     </MeshGroup>
     <RasterGroup>
         <MLRaster label="Rectified_Left_color.jpg">
-            <VCGCamera CameraType="0" CenterPx="2052 1513" FocalMm="16.6965299508" LensDistortion="0.000000 0.000000" PixelSizeMm="0.003460 0.003460" RotationMatrix="1.000000  0.000000  0.000000  0.000000  0.000000  1.000000  0.000000  0.000000  0.000000  0.000000  1.000000  0.000000  0.000000  0.000000  0.000000  1.000000 " TranslationVector="0.000000  0.000000  0.000000  1.000000 " ViewportPx="4112 3008"/>
+            <VCGCamera CameraType="0" CenterPx="2052 1513" FocalMm="16.6965299508" LensDistortion="0.000000 0.000000" PixelSizeMm="0.003460 0.003460" RotationMatrix="1.000000  0.000000  0.000000  0.000000  0.000000  1.000000  0.000000  0.000000  0.000000  0.000000  1.000000  0.000000  0.000000  0.000000  0.000000  1.000000 " TranslationVector="0.000000 0.000000 0.000001 1.000000" ViewportPx="4112 3008"/>
             <Plane fileName="Rectified_Left_color.jpg" semantic="1"/>
         </MLRaster>
     </RasterGroup>
@@ -149,6 +149,15 @@ Table 3 Sample .mlp file. &darr;
 In table 3, we could see the information MeshLab needs to properly load the point cloud and the image with camera parameters. Particularly, the attribute CenterPx (principal point) and FocalMm (focal length in millimeter) should be the values produced by the stereo calibration. We have to manually calculate the PixelSizeMm based on the sensor size (digital camera sensor size) and the image size. Normally, the calibration routine gives us the calibrated focal length measured in pixel. We have to convert the units from pixel into millimeter.
 
 The key is using the rectified stereo image. Providing the rectified image, the pose of the camera is as trivial as the identity matrix and zero homogeneous vector. Thus, no rotation or translation for the camera.
+
+<span style="color:red">Updated on July 19th, 2018:</span> If the translation vector of the camera is [0.0 0.0 0.0 1.0], MeshLab won’t align the raster image and the 3D model when using the “show current raster mode” function (figure a). I do not know why. If the “show current raster mode” is wanted, then we could use a small coordinate shift instead of [0.0 0.0 0.0 1.0]. Say [0.0 0.0 1e-6 1.0] will do the trick. With this translation vector, MeshLab will align the raster to the 3D model when “show current raster mode” is activated. Also, note that in the project file listed in table 3, it is not allowed to use more than one white space between any numerical numbers of the translation vector. To be specific, the first of the following works but the second won’t work ("+" represents a single white space).
+
+TranslationVector="0.000000+0.000000+0.000001+1.000000"<br>
+TranslationVector="0.000000++0.000000++0.000001++1.000000"
+
+<p><img src="{{site.baseurl}}/Resources/Posts/Robotics/Stereo/MeshLab/show_current_raster_mode.png" alt="<img>show current raster mode button." width="400px"><br>
+Figure a "show current raster mode" button. &uarr;
+</p>
 
 To learn to compose a custom .mlp file, I just look into the ones saved by MeshLab. And I also find some useful web pages:
 
