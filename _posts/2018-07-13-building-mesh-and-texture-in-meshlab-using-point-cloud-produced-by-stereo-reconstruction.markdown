@@ -159,6 +159,8 @@ TranslationVector="0.000000++0.000000++0.000001++1.000000"
 Figure a "show current raster mode" button. &uarr;
 </p>
 
+<span style="color:red">Updated on July 20th, 2018:</span> The current version (2016.12) of MeshLab has a specific behavior such that the principle point defined by the attribute “CenterPx” is used to shift the position of the texture. When the principle point has a right shift from the center of the image, the texture will be shifted to the right, the opposite direction of the point cloud’s shift direction. The remedy to this is changing the values for “CenterPx” from the principle point (<i>c</i><sub>x</sub>, <i>c</i><sub>y</sub>) to ( <i>w</i> - <i>c</i><sub>x</sub>, <i>h</i> - <i>c</i><sub>y</sub> ), where <i>c</i><sub>x</sub> and <i>c</i><sub>y</sub> are the coordinates of the principle point, <i>w</i> and <i>h</i> are the width and height of the image.
+
 To learn to compose a custom .mlp file, I just look into the ones saved by MeshLab. And I also find some useful web pages:
 
 [https://sourceforge.net/p/meshlab/discussion/499533/thread/cc40efe0/](https://sourceforge.net/p/meshlab/discussion/499533/thread/cc40efe0/)
