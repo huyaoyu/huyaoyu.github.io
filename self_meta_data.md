@@ -28,7 +28,12 @@ nav_order: 1
 *	Carnegie Mellon University
 	
 	Airlab, Field Robotics Center, Robotics Institute.
-	Visiting Scholar, 2018.4 - Now.
+	Post-doc, 2018.6 - now.
+
+*	Carnegie Mellon University
+	
+	Airlab, Field Robotics Center, Robotics Institute.
+	Visiting Scholar, 2018.4 - 2018.6.
 
 *	Shanghai Jiao Tong University
 
