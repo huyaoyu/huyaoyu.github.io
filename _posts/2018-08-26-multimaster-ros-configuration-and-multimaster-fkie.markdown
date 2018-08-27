@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Multimaster ROS configuration and mutimaster_fkie"
+title:  "Multimaster ROS configuration and multimaster_fkie"
 date:   2018-08-26 22:57:19 -0400
 categories: technical
-cover_image: "Resources/Posts/Robotics/FeatureMatching/aligned_point_clouds_scaled.png"
+cover_image: "Resources/Posts/Robotics/Multimaster/cover_ros_luna_logo.png"
 tag: mechanical
 ---
 
@@ -330,3 +330,5 @@ Figure 18 The larger red cross. &uarr;
 <p><img src="{{site.baseurl}}/Resources/Posts/Robotics/Multimaster/figure_19.png" alt="<img>Figure 19 The “Close/Stop/Shutdown” dialog." width="500px"><br>
 Figure 19 The “Close/Stop/Shutdown” dialog. &uarr;
 </p>
+
+Image courtesy: The cover image is copied from the [ROS official website](http://www.ros.org/).
