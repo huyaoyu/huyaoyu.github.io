@@ -122,7 +122,7 @@ rosrun master_discovery_fkie master_discovery _mcast_group:=224.0.0.1
 Figure 3 Terminal output after starting master_discovery node on C0. &uarr;
 </p>
 
-On C1, WITHOUT starting a roscore, start the same node with a different node name. ([Reference](https://nootrix.com/diy-tutos/ros-namespaces/).)
+On C1, WITHOUT starting a roscore, start the same node <span style="color:red">with a different node name</span>. ([Reference](https://nootrix.com/diy-tutos/ros-namespaces/).)
 
 ```
 rosrun master_discovery_fkie master_discovery _mcast_group:=224.0.0.1 __name:=master_discovery_ai
@@ -142,7 +142,7 @@ rosrun master_sync_fkie master_sync
 Figure 4 Terminal output after starting master_sync node no C0. &uarr;
 </p>
 
-On C1 start master_sync node with a different node name.
+On C1 start master_sync node <span style="color:red">with a different node name</span>.
 
 ```
 rosrun master_sync_fkie master_sync __name:=master_sync_ai
