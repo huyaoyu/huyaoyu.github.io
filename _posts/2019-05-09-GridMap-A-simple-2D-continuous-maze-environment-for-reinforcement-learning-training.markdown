@@ -9,6 +9,8 @@ tag: mechanical
 
 # GridMap: A simple 2D continuous maze environment for reinforcement learning training #
 
+This is hosted on my [github](https://github.com/huyaoyu/GridMap) page.
+
 ## Introduction
 
 GridMap is a simple 2D environment in which the user could build a maze for training reinforcement learning models. Although there is a 'Grid' built in the naming, GridMap is designed to work in a continuous coordinate space. 
