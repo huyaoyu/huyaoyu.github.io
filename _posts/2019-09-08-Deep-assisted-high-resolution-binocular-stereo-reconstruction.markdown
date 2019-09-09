@@ -3,13 +3,16 @@ layout: post
 title:  "Deep-Assisted High Resolution Binocular Stereo Depth Reconstruction"
 date:   2019-09-08 15:10:15 -0400
 categories: technical
-cover_image: "Resources/Posts/Robotics/GridMap/GridMapEnv_02_17-100s_98v.png"
+cover_image: "Resources/Posts/Robotics/DeepAssistedStereo/CoverFigure_Scaled.png"
 tag: mechanical
 ---
 
 # Deep-Assisted High Resolution Binocular Stereo Depth Reconstruction #
 
 Authors: Yaoyu Hu, Weikun Zhen, and Sebastian Scherer.
+
+<p><img src="{{site.baseurl}}/Resources/Posts/Robotics/DeepAssistedStereo/CoverFigure_Scaled.png" alt="<img>Cover figure." width="500px"><br>
+</p>
 
 This is the project page of __Deep-Assisted High Resolution Binocular Stereo Depth Reconstruction__.
 
