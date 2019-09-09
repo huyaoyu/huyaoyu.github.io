@@ -5,9 +5,11 @@ title: Publications
 nav_order: 3
 ---
 
-This is the page of HU Yaoyu's publications.
+This is the page of HU Yaoyu's new publications.
 
-# Leading author
+Zhen, Weikun, **Yaoyu Hu**, Jingfeng Liu, and Sebastian Scherer. "A Joint Optimization Approach of LiDAR-Camera Fusion for Accurate Dense 3-D Reconstructions." IEEE Robotics and Automation Letters 4, no. 4 (2019): 3585-3592.
+
+<!-- # Leading author
 
 **Hu Y**, Wang D, Yin J, et al. Numerical analysis of single pad of thrust bearing with the energy equation solved by the characteristic-based split method. *Advances in Mechanical Engineering*, 2015, 7(9): 1687814015606282. [PDF]({{site.baseurl}}/Resources/PDFPublications/AME_2015_Numerical analysis of single pad of thrust bearing with the energy equation solved by the characteristic based split method.pdf)
 
@@ -41,5 +43,5 @@ Wang Y, Wang D, **Hu Y**. Vibration Analysis of Coolant Pump With Two Unbalanced
 
 **Hu Y**, Wang D, Yin J, Xu R. Numerical Modeling of the Fluid Induced Forces of Clearance Flow in Canned Motor Reactor Coolant Pump. Submitted to *Annals of Nuclear Energy* on June 18th, 2017.
 
-**Hu Y**, Xu R, Wang D, Yin J. Investigation of the Fluid Induced Forces of Vertical Annular Clearance with Large Aspect Ratio. Submitted to *Journal of Fluids Engineering* on Sep. 11th, 2017.
+**Hu Y**, Xu R, Wang D, Yin J. Investigation of the Fluid Induced Forces of Vertical Annular Clearance with Large Aspect Ratio. Submitted to *Journal of Fluids Engineering* on Sep. 11th, 2017. -->
 

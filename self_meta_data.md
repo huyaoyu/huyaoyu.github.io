@@ -9,7 +9,7 @@ nav_order: 1
 
 <img src="Resources/Me01.JPG" alt="My portrait image." style="width:250px">
 
-<h1><font color="blue">Finding my way from nuclear engineering to robotics! Things will change during the transition!</font></h1>
+<!-- <h1><font color="blue">Finding my way from nuclear engineering to robotics! Things will change during the transition!</font></h1> -->
 
 **Name:** Yaoyu Hu
 
@@ -52,7 +52,7 @@ nav_order: 1
 
 [rg_addr]: {{ site.data.common_data.myself.researchgate_addr }}
 
-# Skills #
+<!-- # Skills #
 
 * **CFD:** Programming, 3D unstructured grids with turbulent model, parallel computing, FLUENT (UDF), CFX
 
@@ -66,13 +66,16 @@ nav_order: 1
 
 * **Experiments:** Fluid visualization (PIV & high speed photography). Vibration measurement.
 
-* **Frequently used tools:** Eclipse(Linux), Visual Studio, MATLAB, Emacs/Vim(Linux), MySQL(Linux), Sublime Text, git, cmake, gdb, valgrind, ANSYS(APDL, FLUENT, CFX, ICEM, Workbench), Autodesk AutoCAD, Autodesk Inventor, Solidworks, UG NX, LabView, Microsoft Office (Word, Power Point, Excel, Access, Viso), Latex
+* **Frequently used tools:** Eclipse(Linux), Visual Studio, MATLAB, Emacs/Vim(Linux), MySQL(Linux), Sublime Text, git, cmake, gdb, valgrind, ANSYS(APDL, FLUENT, CFX, ICEM, Workbench), Autodesk AutoCAD, Autodesk Inventor, Solidworks, UG NX, LabView, Microsoft Office (Word, Power Point, Excel, Access, Viso), Latex -->
 
 # Research Interests #
 
-* **CFD & FEM program development. LES, hybrid LES/RANS.**
+* **Machine learning for computer vision**
+* **Stereo reconstruction for robots**
+
+<!-- * **CFD & FEM program development. LES, hybrid LES/RANS.**
 * **Simulation and numerical analysis of robotic systems and environment. Micro/Nano-robotics. Lab on a chip systems.**
 * **High performance computing.**
 * **Numerical optimization.**
 * **Fluid structure interaction.**
-* **Rotordynamics of turbomachinery.**
+* **Rotordynamics of turbomachinery.** -->

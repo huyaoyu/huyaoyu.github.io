@@ -2,7 +2,7 @@
 layout: post
 title:  "Scaled Model Molten Salt Pump for Molten Salt Reactor"
 date:   2016-11-2 8:00:00 +0800
-categories: projects
+categories: phd
 cover_image: "my_collection/projects/molten_salt_pump/molten_salt_reactor.png"
 ---
 

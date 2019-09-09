@@ -2,7 +2,7 @@
 layout: post
 title:  "Key Scientific Issues in the Manufacturing of a Reactor Coolant Pump"
 date:   2013-12-1 8:00:00 +0800
-categories: projects
+categories: phd
 cover_image: "Resources/Projects/RCP/02_AP-1000ab_pump.jpg"
 ---
 

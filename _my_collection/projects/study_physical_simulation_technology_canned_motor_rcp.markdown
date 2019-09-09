@@ -2,7 +2,7 @@
 layout: post
 title:  "Study of Physical Simulation Technology for a Pump Rotor"
 date:   2011-6-1 8:00:00 +0800
-categories: projects
+categories: phd
 cover_image: "Resources/Projects/PhysicalSimulation/VirtualLab.png"
 ---
 
