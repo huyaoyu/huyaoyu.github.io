@@ -16,16 +16,17 @@ Authors: Yaoyu Hu, Weikun Zhen, and Sebastian Scherer.
 
 This is the project page of __Deep-Assisted High Resolution Binocular Stereo Depth Reconstruction__.
 
+
+## 1 Detailed comparison among PSMNU, SGBM, SGBMUR0, and SBMP on Middlebury dataset
 Here we list the comparisons between PSMNU, SGBM, SGBMUR, and SGBMP on Middleburry Evaluation V3 with the training cases in their full resolution.
 
-## Middlebury dataset
 In the following materials, the abbreviation GTC means Ground Truth Coverage, it is the percentage of pixels which have un-occluded true disparities. Middlebury dataset does not provide disparities for all of the pixels in the left image. Some pixels are occluded and some pixels have Inf. disparities. GTCs are different across the cases. All pixels that are NOT covered by the ground truth will NOT participate in the calculation of _Bad1.0_, _invalid_, _avgErr_, and _stdErr_.
 
 The disparity ranges are determined by looking at the true disparity first. Then a total number of disparity dividable by 8 is chosen. Disparity ranges are converted to _minDisparity_ and _numDisparity_ for SGBM, SGBMUR, and SGBMP. All of the true disparities are confined by the disparity ranges.
 
 SGBM has the lowest _Bad1.0_ among all the cases. This is because SGBM invalidates lots of pixels and only keeps the pixels which it has 'confident' about. The same reason leads to SGMB's high _invalid_ value.
 
-To compare the performance, we have to consider all the metrics together rather than comparing only one of them. The goal of SGBMP is achieving low _avgErr_ and low _invalid_ at the same time and do its job on our 4K stereo images. Due to the intrinsic difficultis in the hard regions for stereo reconstruction, disparity predictions by SGBMP in SGBM's _invalid_ regions contains additional noise, making the _Bad1.0_ value higher than SGBM.  The increased _Bad1.0_ is the cost SGBMP paied to have lower _invalid_. However, SGBMP manages to achieve lower _avgErr_, lower _invalid_, and lower _stdErr_ for most of the cases, meaning it does perform better than SGBM.
+To compare the performance, we have to consider all the metrics together rather than comparing only one of them. The goal of SGBMP is achieving low _avgErr_ and low _invalid_ at the same time and do its job on our 4K stereo images. Due to the intrinsic difficultis in the hard regions for stereo reconstruction, disparity predictions by SGBMP in SGBM's _invalid_ regions contains additional noise, making the _Bad1.0_ value higher than SGBM.  The increased _Bad1.0_ is the cost SGBMP paid to have lower _invalid_. However, SGBMP manages to achieve lower _avgErr_, lower _invalid_, and lower _stdErr_ for most of the cases, meaning it does perform better than SGBM.
 
 The 12 cases on which SGBMP has lowest _stdErr_ are: Adirondack, ArtL, Jadeplant\*, Motorcycle\*, MotorcycleE, PianoL, Pipes, Playroom, Playtable, PlaytableP, Shelves, and Teddy. The cases marked by * are those SGBMP did not get the lowest _avgErr_.
 
@@ -223,3 +224,128 @@ Teddy, true disparity, PSMNU (up-sampled), SGBM, SGBMUR, SGBMP.
 <p><img src="{{site.baseurl}}/Resources/Posts/Robotics/DeepAssistedStereo/M14_Vintage.png" alt="<img>Vintage." width="750px"><br>
 Vintage, true disparity, PSMNU (up-sampled), SGBM, SGBMUR, SGBMP.
 </p>
+
+## 2 Other comparisons ##
+
+Here we provide ohter comparisons in detial on vairous public stereo datasets. 
+
+### 2.1 Evaluation of SGBMP on the Middlebury Evaluation V3 dataset ###
+
+First of all, we provide the comparison on the Middlebury Evaluation V3 dataset. There are some comments on our methods. 
+
+- As described in the paper, in the current work, PSMNU works with a resolution of 768x1024. All the Middlebury images are first down-sampled to this resolution and then the disparity results are up-sampled back to their original full resolutions. The comparison is done with the up-sampled results.
+- We train PSMNU on the Scene Flow dataset (Flyingthings3D and Monkaa). No data augmentation is applied. No fine-tune is applied for the Middlebury dataset. No Middlebury data appears in the training set.
+- SGBMP works with full-resolution images and produces full-resolution disparity results.
+- SGBMP is designed to work with our 4K resolution stereo images. The parameters of SGMBP are not tuned to achieve higher performance on any specific public dataset. 
+
+The results on Middlebury Evaluation V3 are submitted to the [offical website][SGBMP_M_Submission] of the Middlebury dataset. The name of the submission is `SGBMP`. Compared with other state-of-the-art methods that work with full resolution images, we do not have the top performance, partially because we did not tune the method for the Middlebury dataset. 
+
+[SGBMP_M_Submission]: http://vision.middlebury.edu/stereo/eval3/
+
+On this dataset, we show SGMP does improve the performance of PSMNU and has better performance than the original SGBM method which also has the ability to operate on our 4K images. To the authors' knowledge, no deep-learning methods operate 4K images directly. We are exploring the possibility to bring learning-based and non-learning-based methods together for high-resolution stereo reconstruction.
+
+### 2.2 Evaluation of PSMNU on the Scene Flow dataset
+
+The performance of SGBMP heavily depends on PSMNU which produces the initial disparity and uncertainty estimation on down-sampled images. To better compare the performance of PSMNU and understand its characteristics, we provide the evaluation results of PSMNU on the testing set of the Scene Flow dataset.
+
+PSMNU is trained on the Scene Flow dataset[^mayer2016large] (Flyingthings3D and Monkaa), it is expected that PSMNU performs well on the test set. We also have some comments first.
+
+- The testing set is __NOT__ in the training set.
+- We only trained the model for a small number of epoch (5 epochs in the paper).
+- No learning rate schedule is used.
+- Due to the requirement of PSMNU, which is a modified version of PSMNet[^chang2018pyramid], the dimensions of the images have to be dividable by 32. During the evaluation, we first resize the images to the closest dimension dividable by 32, then PSMNU performs disparity estimation. The disparity is then resized back to the original dimension. 
+- The test set of Scene Flow dataset has 4370 pairs of stereo images with true disparity maps. However, some of the test cases have extremely closed-up objects, resulting in very large disparity values. These cases are not suitable for evaluation. Following the treatment adopted by other researchers, we filter out the test cases which have their disparity larger than 300 on more than 25% of the total pixels[^liang2018learning] [^pang2017cascade].
+- We compute the end-point-error (EPE) on all the pixels with a ground truth disparity less than or equal to 256 (similar to PSMNet[^chang2018pyramid]). Then the total EPE over all these pixels of all the filtered test cases is summed and the average EPE is calculated.
+
+The evaluation shows an average EPE of 1.49 pixel over 4349 filtered cases (with 21 cases filtered out). This EPE is higher than the original PSMNet because we have to compromise for the uncertainty estimation. As discussed in the paper, the uncertainty value works as a weight factor of the pixel-wise disparity error. For pixels tend to have a large error, the uncertainty attenuates the loss function by a larger uncertainty value.  
+
+A comparison between other deep-learning methods on the Scene Flow dataset is listed in the following table.
+
+|                                   |  EPE | # of epochs |   Scene Flow dataset components   |
+|:---------------------------------:|:----:|:-----------:|:---------------------------------:|
+|    CSPN[^cheng2019learning]       | 0.78 |      10     | FlyingThings3D + Monkaa + Driving |
+| DeepPruner[^duggal2019deeppruner] | 0.86 |      64     | FlyingThings3D + Monkaa + Driving |
+|  SSPCV-Net[^wu2019semantic]       | 0.87 |      40     | FlyingThings3D + Monkaa + Driving |
+|   PSMNet[^chang2018pyramid]       | 1.09 |      10     | FlyingThings3D + Monkaa + Driving |
+| EdgeStereo[^song2018edgestereo]   | 1.11 |     ~33     | FlyingThings3D + Monkaa + Driving |
+|     CRL[^pang2017cascade]         | 1.32 |     >10     |           FlyingThings3D          |
+|   iResNet[^liang2018learning]     | 1.40 |     ~36     | FlyingThings3D + Monkaa + Driving |
+|  __PSMNU__ (Ours)                 | 1.49 |      5      |      FlyingThings3D + Monkaa      |
+|  DispNetC[^mayer2016large]        | 1.68 |     >20     |           FlyingThings3D          |
+|    GCNet[^kendall2017end]         | 2.51 |      ~7     | FlyingThings3D + Monkaa + Driving |
+
+### 2.3 Evaluation of PSMNU on KITTI datasets
+
+KITTI datasets have 2 separate versions, the [2012][kitti2012] and [2015][kitti2015] sets. We also have additional comments:
+
+[kitti2012]: http://www.cvlibs.net/datasets/kitti/eval_stereo_flow.php?benchmark=stereo
+[kitti2015]: http://www.cvlibs.net/datasets/kitti/eval_scene_flow.php?benchmark=stereo
+
+- PSMNU has not been exposed to any kind of training data that is similar to a self-driving scenario. Scene Flow dataset does provide a similar set (the Driving set) but we did not use it.
+- We did not submit the result to the KITTI website, the evaluations are performed locally on the "training set" with the development kit provided by KITTI. The kit reports average EPE on non-occluded and all ground truth pixels.
+- For KITTI 2012, we only use the grayscale images. For KITTI 2015, which only provides color images, we convert the color images into grayscale ones.
+- Images of the KITTI dataset have different dimensions, during the evaluation, we first resize the input images to 352x1216 (closest size to the original dimension dividable by 32). Then the disparity prediction is resized back to the original image size. Evaluations are performed on the original size.
+
+Without any training data which covers the self-driving scenario, PSMNU achieves the average EPE values listed in the following table. Readers are encouraged to check out the performance of other methods listed on the [KITTI 2012][kitti2012] and [2015][kitti2015] webpages.
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-9wq8{border-color:inherit;text-align:center;vertical-align:middle}
+.tg .tg-baqh{text-align:center;vertical-align:top}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-9wq8">Dataset</th>
+    <th class="tg-baqh" colspan="4">2012</th>
+    <th class="tg-baqh" colspan="4">2015</th>
+  </tr>
+  <tr>
+    <td class="tg-9wq8">Metrics</td>
+    <td class="tg-baqh">3-pix noc %</td>
+    <td class="tg-9wq8">EPE noc</td>
+    <td class="tg-baqh">3-pix occ %</td>
+    <td class="tg-9wq8">EPE occ</td>
+    <td class="tg-baqh">3-pix noc %</td>
+    <td class="tg-9wq8">EPE noc</td>
+    <td class="tg-baqh">3-pix occ %</td>
+    <td class="tg-c3ow">EPE occ</td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow">PSMNU</td>
+    <td class="tg-baqh">6.04</td>
+    <td class="tg-c3ow">1.15</td>
+    <td class="tg-baqh">6.93</td>
+    <td class="tg-c3ow">1.37</td>
+    <td class="tg-baqh">6.73</td>
+    <td class="tg-c3ow">1.65</td>
+    <td class="tg-baqh">6.98</td>
+    <td class="tg-c3ow">1.69</td>
+  </tr>
+</table>
+
+## References ##
+
+[^mayer2016large]: Mayer, Nikolaus, Eddy Ilg, Philip Hausser, Philipp Fischer, Daniel Cremers, Alexey Dosovitskiy, and Thomas Brox. "A large dataset to train convolutional networks for disparity, optical flow, and scene flow estimation." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 4040-4048. 2016.
+
+[^chang2018pyramid]: Chang, Jia-Ren, and Yong-Sheng Chen. "Pyramid stereo matching network." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 5410-5418. 2018.
+
+[^liang2018learning]: Liang, Zhengfa, Yiliu Feng, Yulan Guo, Hengzhu Liu, Wei Chen, Linbo Qiao, Li Zhou, and Jianfeng Zhang. "Learning for disparity estimation through feature constancy." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 2811-2820. 2018.
+
+[^pang2017cascade]: Pang, Jiahao, Wenxiu Sun, Jimmy SJ Ren, Chengxi Yang, and Qiong Yan. "Cascade residual learning: A two-stage convolutional neural network for stereo matching." In Proceedings of the IEEE International Conference on Computer Vision Workshops, pp. 887-895. 2017.
+
+[^cheng2019learning]: Cheng, Xinjing, Peng Wang, and Ruigang Yang. "Learning Depth with Convolutional Spatial Propagation Network." IEEE transactions on pattern analysis and machine intelligence (2019).
+
+[^duggal2019deeppruner]: Duggal, Shivam, Shenlong Wang, Wei-Chiu Ma, Rui Hu, and Raquel Urtasun. "DeepPruner: Learning Efficient Stereo Matching via Differentiable PatchMatch." In Proceedings of the IEEE International Conference on Computer Vision, pp. 4384-4393. 2019.
+
+[^wu2019semantic]: Wu, Zhenyao, Xinyi Wu, Xiaoping Zhang, Song Wang, and Lili Ju. "Semantic Stereo Matching with Pyramid Cost Volumes." In Proceedings of the IEEE International Conference on Computer Vision, pp. 7484-7493. 2019.
+
+[^song2018edgestereo]: Song, Xiao, Xu Zhao, Hanwen Hu, and Liangji Fang. "Edgestereo: A context integrated residual pyramid network for stereo matching." In Asian Conference on Computer Vision, pp. 20-35. Springer, Cham, 2018.
+
+[^kendall2017end]: Kendall, Alex, Hayk Martirosyan, Saumitro Dasgupta, Peter Henry, Ryan Kennedy, Abraham Bachrach, and Adam Bry. "End-to-end learning of geometry and context for deep stereo regression." In Proceedings of the IEEE International Conference on Computer Vision, pp. 66-75. 2017.
+
+<!---
+Yang, Gengshan, Joshua Manela, Michael Happold, and Deva Ramanan. "Hierarchical deep stereo matching on high-resolution images." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 5515-5524. 2019.
+--->
