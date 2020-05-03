@@ -5,4 +5,5 @@ _site_staging
 .sass-cache
 .jekyll-metadata
 Gemfile.lock
+*.zip
 

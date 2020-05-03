@@ -7,6 +7,8 @@ cover_image: "Resources/Posts/Robotics/DeepAssistedStereo/CoverFigure_Scaled.png
 tag: mechanical
 ---
 
+{% include youtube-player.html id="MibLMu-f14I" %}
+
 # Deep-Assisted High Resolution Binocular Stereo Depth Reconstruction #
 
 Authors: Yaoyu Hu, Weikun Zhen, and Sebastian Scherer.
