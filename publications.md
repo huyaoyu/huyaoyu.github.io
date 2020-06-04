@@ -9,6 +9,12 @@ This is the page of HU Yaoyu's new publications.
 
 Zhen, Weikun, **Yaoyu Hu**, Jingfeng Liu, and Sebastian Scherer. "A Joint Optimization Approach of LiDAR-Camera Fusion for Accurate Dense 3-D Reconstructions." IEEE Robotics and Automation Letters 4, no. 4 (2019): 3585-3592.
 
+**Yaoyu Hu**, Weikun Zhen, and Sebastian Scherer. "Deep-Learning Assisted High-Resolution Binocular Stereo DepthReconstruction." 2020 IEEE International Conference on Robotics and Automation (ICRA) 31 May - 31 August, 2020. Paris, France.
+
+Weikun Zhen, **Yaoyu Hu**, Huai Yu, Sebastian Scherer. "LiDAR-enhanced Structure-from-Motion." 2020 IEEE International Conference on Robotics and Automation (ICRA) 31 May - 31 August, 2020. Paris, France.
+
+Wang, Wenshan, Delong Zhu, Xiangwei Wang, **Yaoyu Hu**, Yuheng Qiu, Chen Wang, Yafei Hu, Ashish Kapoor, and Sebastian Scherer. "TartanAir: A Dataset to Push the Limits of Visual SLAM." arXiv preprint arXiv:2003.14338 (2020).
+
 <!-- # Leading author
 
 **Hu Y**, Wang D, Yin J, et al. Numerical analysis of single pad of thrust bearing with the energy equation solved by the characteristic-based split method. *Advances in Mechanical Engineering*, 2015, 7(9): 1687814015606282. [PDF]({{site.baseurl}}/Resources/PDFPublications/AME_2015_Numerical analysis of single pad of thrust bearing with the energy equation solved by the characteristic based split method.pdf)
