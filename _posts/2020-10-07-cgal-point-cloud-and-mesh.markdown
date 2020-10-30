@@ -245,4 +245,45 @@ Sub figures: a) the input mesh. b) the remeshed surface. c) split and protected/
 
 # Surface mesh hole identification and filling #
 
+Surface meshes are represented as [halfedge graphs](https://doc.cgal.org/latest/HalfedgeDS/index.html) in which holes are actually equivalent to mesh bounaries. For a halfedge graph in CGAL, all bounary halfedges are connecting a regular facet and a special null facet. All the bounariy halfedges taking the same null facet as the incident facet. To identify a hole, starting from a boundary halfedge, and follow the "next halfedge" until reaching the starting halfedge (a circle is formed). `CGAL::Halfedge_around_face_circulator<>` provides the circulator for traversing the halfedges. This strategy is actually used inside the hole-filling APIs of CGAL.
 
+{% highlight c++ %}
+
+// Let Mesh_t be the typedef of the mesh type and variable mesh be the mesh object.
+
+typedef boost::graph_traits<Mesh_t>::halfedge_descriptor HalfedgeDesc_t;
+typedef CGAL::Halfedge_around_face_circulator<Mesh_t> HalfedgeAroundFaceCirculator_t;
+
+for ( HalfedgeDesc_t h : halfedges( mesh ) ) {
+	if ( !is_border(h, mesh) ) {
+		continue;
+	}
+
+	HalfedgeAroundFaceCirculator_t circ ( h, mesh ), done(circ);
+
+	do {
+		// Do stuff.
+	} while ( ++circ != done )
+}
+
+{% endhighlight %}
+
+I was using one of the CGAL's hole filling APIs, `CGAL::Polygon_mesh_processing::triangulate_and_refine_hole()`. As the name suggests, it triangulates the identified hole and refines the newly created mesh. In my workflow, after the holes are filled, I'd like to do an isotropic remeshing only for the newly created facets in the hole areas. Then retrieve the vertices of the remeshed facets, save the points of the vertices into a separate file. All these actions could be realized by the previously discussed contents of this article.
+
+As always, there is a [sample code][HoleFillingSample] showing the hole filling, selected remeshing, and point collection. To run the sample code, the user needs to specify the input mesh and the output directory. Let's take the resulting mesh from the AFS reconstruction as the input mesh, the commands will look like
+
+[HoleFillingSample]: https://github.com/huyaoyu/CGAL_samples/blob/master/HoleFilling.cpp
+
+{% highlight shell %}
+<path to executable>/HoleFilling \
+	<path to repo>/Data/Meshes/AFSReconstructed.ply \
+	<path to repo>/Data/HoleFilling
+{% endhighlight %}
+
+There is only one large hole on the surface mesh. The following figure shows the original mesh with a hole, initially filled hole, remeshed hole area, and the retrieved points, respectively.
+
+<img src="{{site.baseurl}}/Resources/Posts/CGAL/HoleFilling/hole-filling.png" alt="Figure: Holefilling. " width="800px"/>
+
+1: Original mesh with a large hole. 2: Initially filled facets (refined). 3: Remeshed hole area. 4: Retrieved points.
+
+# Ray shooting to a surface mesh #
