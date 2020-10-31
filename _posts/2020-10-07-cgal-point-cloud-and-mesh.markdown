@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Some useful CGAL functionalities for working with point clouds"
+title:  "Some useful CGAL functionalities for working with point clouds and surface meshes"
 date:   2020-10-07 00:00:00 -0500
 categories: technical
 cover_image: "Resources/Posts/CGAL/cgal_front_page_2013.png"
