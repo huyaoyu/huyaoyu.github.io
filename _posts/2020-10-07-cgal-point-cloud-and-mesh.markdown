@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Some usefull CGAL functionalities for working with point clouds"
+title:  "Some useful CGAL functionalities for working with point clouds"
 date:   2020-10-07 00:00:00 -0500
 categories: technical
 cover_image: "Resources/Posts/CGAL/cgal_front_page_2013.png"
@@ -287,3 +287,28 @@ There is only one large hole on the surface mesh. The following figure shows the
 1: Original mesh with a large hole. 2: Initially filled facets (refined). 3: Remeshed hole area. 4: Retrieved points.
 
 # Ray shooting to a surface mesh #
+
+Some tasks require projecting pixels from an image into the 3D scene. These pixels could be the result of some kinds of 2D detection or segmentation tasks. With the camera pose, camera intrinsic parameters, and, of course, the 3D surface mesh, we cloud project those pixels onto the surface mesh with the ray shooting APIs, of the so-called "[3D Fast Intersection and Distance Computation (AABB Tree)](https://doc.cgal.org/latest/AABB_tree/index.html)" APIs, of CGAL.
+
+During the preparation of this sample, I tried to make some images from Meshlab and let Meshlab create the intrinsic and extrinsic (pose) parameters for the cameras. I had some trouble to make the whole pipeline work, there were always some weird things happening when I transformed the camera. Anyway, I managed to generate a dummy camera, its 3D pose (and orientation), and the pixels that need to be projected. The target mesh is the bunny10k mesh provide by Meshlab. Every pixel and the origin point of the camera (the camera center) make a 3D direction vector. The projection is done by shooting a ray starting from the camera origin along the direction vector. If the ray hits the surface mesh, the first intersection point is retrieved as the projected point.
+
+In the [sample code][RayShootingSample], I additionally calculated the surface normal of the mesh. Then after a pixel is projected to the surface mesh, the projected point is shifted along the local surface normal direction by a small amount of distance. In this way, the projected point is made floating above the surface mesh and becomes easily visible. There are relatively more input arguments than the other samples
+
+{% highlight shell %}
+<path to executable>/RayShooting \
+	<path to repo>/Data/Meshes/bunny10k.ply \
+	<path to repo>/Data/Meshes/Meshlab/CameraPoseT.dat \
+	<path to repo>/Data/Meshes/Meshlab/CameraIntrinsics.dat \
+	<path to repo>/Data/Meshes/Meshlab/CirclePoints.csv \
+	<path to repo>/Data/RayShooting/HitPoints.ply
+{% endhighlight %}
+
+[RayShootingSample]: https://github.com/huyaoyu/CGAL_samples/blob/master/RayShooting.cpp
+
+After execution, two point clouds will be written to the file system. One for the camera origin and the direction points (direction vectors are scaled). The other point cloud is the project points. The following two figures show the camera origin point (red), direction points (red), and the projected points (green) from a side view and front view. This particular sample has 3615 hits and 87 misses.
+
+<img src="{{site.baseurl}}/Resources/Posts/CGAL/RayShooting/ray-shooting-side-view.png" alt="Figure: Ray shooting (side view). " width="600px"/>
+<img src="{{site.baseurl}}/Resources/Posts/CGAL/RayShooting/ray-shooting-front-view.png" alt="Figure: Ray shooting (front view). " width="600px"/>
+
+# Shape detection from a point cloud #
+
