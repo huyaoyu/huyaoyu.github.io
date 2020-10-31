@@ -32,15 +32,15 @@ I want to acknowledge that the [CGAL mailing][CGAL_mail] list is extremely helpf
 
 The cover image of this post is copied from the [CGAL offical site][CGAL_site].
 
-# Source of sample data
-
-The point clouds and meshes in this blog are copied from the sample files of [Meshlab](https://sourceforge.net/projects/meshlab/). All rights reserved to the original authors.
-
 # Sample code
 
 I prepared a [Github repo][GithubRepo] that holds all the sample codes discussed in this blog. I am working on Ubuntu 18.04 and CGAL 5.1. To compile the code, a system environment variable should be defined as `CGAL_DIR` showing where CGAL is located in the filesystem.
 
-The sample data should be placed in the `Data` sub-directory of the source code. All the data could be downloaded from here.  __Remember to upload the files!__
+# Source of sample data
+
+Some of the point clouds and meshes in this blog are copied from the sample files of [Meshlab](https://sourceforge.net/projects/meshlab/). All rights reserved to the original authors.
+
+The sample data should be placed in the `Data` sub-directory of the source code. All the data and results from running the sample codes could be downloaded from [here](https://drive.google.com/drive/folders/15BWt9YyCh17bTovM6lxrX807xnkZaWu6?usp=sharing).
 
 [GithubRepo]: https://github.com/huyaoyu/CGAL_samples
 
@@ -60,7 +60,10 @@ For 3D points and normals, CGAL provides helper functions `CGAL::make_ply_point_
 
 The sample code reads a point cloud in PLY format and writes it back to the filesystem as it is. So we could load the files into point cloud visualization software such as [CloudCompare](https://www.danielgm.net/cc/) to check if we are reading and writing the point clouds properly. I noticed that the size of the output PLY file is larger than the input. This might have something to do with the underlying CGAL kernel we are using and the kernel is using a double-precision floating-point type. The following is a sample point cloud, `Data/PointClouds/TrimStarInit0.5_NormalColor.ply`.
 
-<img src="{{site.baseurl}}/Resources/Posts/CGAL/ReadWritePointCloud/output_point_cloud.png" alt="The point cloud to be read and written. " width="400px"/>
+<figure>
+	<img src="{{site.baseurl}}/Resources/Posts/CGAL/ReadWritePointCloud/output_point_cloud.png" alt="The point cloud to be read and written. " width="400px"/>
+	<figcaption>The point cloud to be read and written. The color of the points is assigned according to their coordinates. </figcaption>
+</figure>
 
 To test with the sample point cloud shown above, we could use the following commands.
 
@@ -92,7 +95,10 @@ CGAL handle entities such as points, vertex normals, face normals as __property 
 
 The [sample code][ReadWritePLYMeshSample] writes the modified mesh to the filesystem in both ASCII and binary format. If we load the mesh into Meshlab, we will see something like the following, with the green mesh being the modified mesh (the color is assigned in Meshlab). To write a binary PLY file, it seems that we also have to use the `CGAL::set_binary_mode()` method. Please refer to the [sample code][ReadWritePLYMeshSample] for details.
 
-<img src="{{site.baseurl}}/Resources/Posts/CGAL/ReadWritePLYMesh/shifted-blocks.png" alt="The original and modified (green) meshes. " width="400px"/>
+<figure>
+	<img src="{{site.baseurl}}/Resources/Posts/CGAL/ReadWritePLYMesh/shifted-blocks.png" alt="The original and modified (green) meshes. " width="400px"/>
+	<figcaption>The original (gray) and modified (green) meshes. The original mesh is duplicated and moved along the y-axis.</figcaption>
+</figure>
 
 One additional thing we could observe from the result ASCII PLY file is that CGAL does use double-precision floating-point numbers.
 
@@ -231,7 +237,10 @@ Note that this sample has a significant execution time difference between the de
 
 The following figure illustrates the reconstructed surface and the input point cloud (dark green colored points, maybe hard to see the color) in Meshlab.
 
-<img src="{{site.baseurl}}/Resources/Posts/CGAL/AFS/reconstructed.png" alt="Figure: The reconstructed surface and the input points (dark green colored). " width="500px"/>
+<figure>
+	<img src="{{site.baseurl}}/Resources/Posts/CGAL/AFS/reconstructed.png" alt="Figure: The reconstructed surface and the input points (dark green colored). " width="500px"/>
+	<figcaption>The reconstructed surface and the input points (dark green color). This point cloud is the same in the sample for point cloud reading and writing.</figcaption>
+</figure>
 
 # Isotropic remeshing #
 
@@ -239,13 +248,14 @@ Of course, CGAL has the function for isotropic remeshing. However, we have to be
 
 [IsotropicRemeshingSample]: https://github.com/huyaoyu/CGAL_samples/blob/master/IsotropicRemeshing.cpp
 
-<img src="{{site.baseurl}}/Resources/Posts/CGAL/IsotropicRemeshing/original-and-remeshed-surfaces.png" alt="Figure: The original and remeshed surfaces. " width="800px"/>
-
-Sub figures: a) the input mesh. b) the remeshed surface. c) split and protected/fixed borders. d) defect regions after remeshing.
+<figure>
+	<img src="{{site.baseurl}}/Resources/Posts/CGAL/IsotropicRemeshing/original-and-remeshed-surfaces.png" alt="Figure: The original and remeshed surfaces. " width="800px"/>
+	<figcaption>The original and remeshed surfaces. a) the input mesh. b) the remeshed surface. c) split and protected/fixed borders. d) defect regions after remeshing.</figcaption>
+</figure>
 
 # Surface mesh hole identification and filling #
 
-Surface meshes are represented as [halfedge graphs](https://doc.cgal.org/latest/HalfedgeDS/index.html) in which holes are actually equivalent to mesh bounaries. For a halfedge graph in CGAL, all bounary halfedges are connecting a regular facet and a special null facet. All the bounariy halfedges taking the same null facet as the incident facet. To identify a hole, starting from a boundary halfedge, and follow the "next halfedge" until reaching the starting halfedge (a circle is formed). `CGAL::Halfedge_around_face_circulator<>` provides the circulator for traversing the halfedges. This strategy is actually used inside the hole-filling APIs of CGAL.
+Surface meshes are represented as [halfedge graphs](https://doc.cgal.org/latest/HalfedgeDS/index.html) in which holes are actually equivalent to mesh bounaries. For a halfedge graph in CGAL, all bounary halfedges are connecting a regular facet and a special null facet. All the bounariy halfedges taking the same null facet as the incident facet. To identify a hole, starting from a boundary halfedge, and follow the "next halfedge" until reaching the starting halfedge (a circle is formed). `CGAL::Halfedge_around_face_circulator<>` provides the circulator for traversing the halfedges. This strategy is actually used [inside the hole-filling APIs of CGAL](https://github.com/CGAL/cgal/blob/d0d021ef3fcbe395e42f8efabdcb37818de7107c/Polygon_mesh_processing/include/CGAL/Polygon_mesh_processing/internal/Hole_filling/Triangulate_hole_polygon_mesh.h#L116).
 
 {% highlight c++ %}
 
@@ -282,9 +292,11 @@ As always, there is a [sample code][HoleFillingSample] showing the hole filling,
 
 There is only one large hole on the surface mesh. The following figure shows the original mesh with a hole, initially filled hole, remeshed hole area, and the retrieved points, respectively.
 
-<img src="{{site.baseurl}}/Resources/Posts/CGAL/HoleFilling/hole-filling.png" alt="Figure: Holefilling. " width="800px"/>
+<figure>
+	<img src="{{site.baseurl}}/Resources/Posts/CGAL/HoleFilling/hole-filling.png" alt="Figure: Holefilling. " width="800px"/>
+	<figcaption>Hole filling. 1: Original mesh with a large hole. 2: Initially filled facets (refined). 3: Remeshed hole area. 4: Retrieved points.</figcaption>
+</figure>
 
-1: Original mesh with a large hole. 2: Initially filled facets (refined). 3: Remeshed hole area. 4: Retrieved points.
 
 # Ray shooting to a surface mesh #
 
@@ -307,8 +319,32 @@ In the [sample code][RayShootingSample], I additionally calculated the surface n
 
 After execution, two point clouds will be written to the file system. One for the camera origin and the direction points (direction vectors are scaled). The other point cloud is the project points. The following two figures show the camera origin point (red), direction points (red), and the projected points (green) from a side view and front view. This particular sample has 3615 hits and 87 misses.
 
-<img src="{{site.baseurl}}/Resources/Posts/CGAL/RayShooting/ray-shooting-side-view.png" alt="Figure: Ray shooting (side view). " width="600px"/>
-<img src="{{site.baseurl}}/Resources/Posts/CGAL/RayShooting/ray-shooting-front-view.png" alt="Figure: Ray shooting (front view). " width="600px"/>
+<figure>
+	<img src="{{site.baseurl}}/Resources/Posts/CGAL/RayShooting/ray-shooting-side-view.png" alt="Figure: Ray shooting (side view). " width="600px"/>
+	<img src="{{site.baseurl}}/Resources/Posts/CGAL/RayShooting/ray-shooting-front-view.png" alt="Figure: Ray shooting (front view). " width="600px"/>
+	<figcaption>Ray shootings to a surface mesh. Top: side view. Bottom: front view.</figcaption>
+</figure>
 
 # Shape detection from a point cloud #
 
+CGAL actually provides several kinds of primitive shape (e.g., planes and cylinders) detection methods for different underlying geometries. Some methods work on point clouds and surface meshes. However, the methods for surface meshes work in a way that they try to collect facets into clusters falling in the same primitive geometry such as planes. What I really wanted for my project is detecting shapes from the vertices of a surface mesh. Well, that just means we need to extract points from the surface mesh vertices and then do our shape detection from the points. CGAL names the module as "[Efficient RANSAC](https://doc.cgal.org/latest/Shape_detection/index.html)". When operating on a point cloud, it needs the point normal to work properly. In [this sample][ShapeDetectionSample], I'm gonna estimate the normals on the surface vertices before point extraction. We do not orient the normal vectors since shape detection should not sensitive to the direction (inwards or outwards) of the vectors. Then points are extracted from the vertices and the vertex normal property is copied to the point cloud. I only do plane detection. After the detection, every point is assigned a color representing its plane association (plane index). Finally, the point cloud with normal vectors and color is written to the file system for visualization.
+
+[ShapeDetectionSample]: https://github.com/huyaoyu/CGAL_samples/blob/master/PointCloudShapeDetection.cpp
+
+To run the sample code, all you need is 
+{% highlight shel %}
+<path to executable>/PCShapeDetection \
+	<path to repo>/Data/Meshes/Bar.ply \
+	<path to repo>/Data/ShapeDetection/ColoredPoints.ply
+{% endhighlight %}
+
+<figure>
+	<img src="{{site.baseurl}}/Resources/Posts/CGAL/ShapeDetection/shape-detection.png" alt="Figure: Original mesh and the colored point cloud according to the detected planes. " width="800px"/>
+	<figcaption>The original mesh and the colored point cloud according to the detected planes. Left: the original surface mesh. There are holes in the mesh. Right: the point cloud colored by the detected planes.</figcaption>
+</figure>
+
+# Closing remark #
+
+Well, I think that's it. CGAL, with its glowing charm, does give me some trouble when I started to work with it. However, as time goes, it becomes better. Still, CGAL is unlike the other packages that I am using, it has its own characteristics and there exists lots of stuff that I do not fully understand. Yet, the portions of CGAL I managed to use may be forgotten after a while. That's partially the motivation when I start to write this post over three weeks ago, to make a note for myself and think it through again. I want to express my gratitude, again, that the CGAL mailing list is very active and helpful. Thank you there!
+
+Keep safe, keep active!
