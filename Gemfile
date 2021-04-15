@@ -29,3 +29,10 @@ end
 
 # html-pipeline
 gem 'rouge'
+gem 'rinku' # AutolinkFilter
+gem 'escape_utils' # EmailReplyFilter, PlainTextInputFilter, TableOfContentsFilter
+gem 'email_reply_parser' # EmailReyplyFilter
+gem 'gemoji' # EmojiFilter
+gem 'commonmarker' # MarkdownFilter
+gem 'sanitize' # SanitizationFilter
+gem 'RedCloth' # TextileFilter
