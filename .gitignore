@@ -6,4 +6,4 @@ _site_staging
 .jekyll-metadata
 Gemfile.lock
 *.zip
-
+*.code-workspace
