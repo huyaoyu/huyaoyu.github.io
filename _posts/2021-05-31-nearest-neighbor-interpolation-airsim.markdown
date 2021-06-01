@@ -59,7 +59,7 @@ sudo apt-get install -y clang-8 clang++-8 libc++-8-dev libc++abi-8-dev
 
 Actually, the above command is already executed by the `setup.sh` script of AirSim.
 
-Then, clone the OpenCV source code and pick an appropriate tag. I choose 4.2.0 because it is the version my current system uses. Create a build directory and an install directory as usual. We only need an OpenCV package that delivers the essential functionalities. To reduce third-party dependency as much as possible, we will disable lots of irrelative features of OpenCV. The CMake configuration parameters are listed as follows.
+Then, clone the OpenCV source code and pick an appropriate tag. I choose 4.2.0 because it is the version my current system uses. Create a build directory and an install directory as usual. We only need an OpenCV package that delivers the essential functionalities. To reduce third-party dependency as much as possible, we will disable lots of irrelative features of OpenCV. The CMake configuration parameters are listed as follows. (Go to [OpenCV's offical documentation](https://docs.opencv.org/master/db/d05/tutorial_config_reference.html) for more details.)
 
 ```bash
 cmake -DCMAKE_C_COMPILER=/usr/bin/clang-8 -DCMAKE_CXX_COMPILER=/usr/bin/clang++-8 \
